@@ -1,0 +1,1209 @@
+% \iffalse meta-comment
+%
+% Copyright 2005-2006
+% CTEX.ORG and any individual authors listed elsewhere in this file.
+%
+% This file is part of the LNOR package project.
+% ----------------------------------------------
+%
+% It may be distributed under the conditions of the LaTeX Project Public
+% License, either version 1.2 of this license or (at your option) any
+% later version. The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+%<*!(cfg|fd)>
+% \fi
+%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+%
+% \CheckSum{1094}
+%
+% \iffalse meta-comment
+%</!(cfg|fd)>
+%
+%<*driver>
+\ProvidesFile{LNOR.dtx}
+%</driver>
+%
+%<cls>\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+%<cls&art>\ProvidesClass{LNOR}
+%<cls&col>\ProvidesClass{LNORcol}
+%<cfg&art>\ProvidesFile{LNOR.cfg}
+%<cfg&col>\ProvidesFile{LNORcol.cfg}
+  [2010/10/18 v0.1k LNOR
+%<cls&art>   article document class]
+%<cls&col>   collection document class]
+%<cfg>   configuration file]
+%
+%<*driver>
+   bundle source file]
+%</driver>
+%
+%<*driver>
+\documentclass{ltxdoc}
+ \topmargin 1 true cm
+ \oddsidemargin 2.5 true cm
+ \evensidemargin 2.5 true cm
+ \textheight 21 true cm
+ \textwidth 14 true cm
+\EnableCrossrefs
+ %\DisableCrossrefs % Say \DisableCrossrefs if index is ready
+\CodelineIndex
+\RecordChanges      % Gather update information
+ %\OnlyDescription  % comment out for implementation details
+ %\OldMakeindex     % use if your MakeIndex is pre-v2.9
+\begin{document}
+  \DocInput{LNOR.dtx}
+\end{document}
+%</driver>
+%
+% \fi
+%
+%
+% \changes{v0.1}{2007/07/21}{Initial version based on ORSC v0.2g}
+%
+%
+% \DoNotIndex{\begin,\end,\begingroup,\endgroup}
+% \DoNotIndex{\ifx,\ifdim,\ifnum,\ifcase,\else,\or,\fi}
+% \DoNotIndex{\let,\def,\xdef,\newcommand,\renewcommand}
+% \DoNotIndex{\expandafter,\csname,\endcsname,\relax,\protect}
+% \DoNotIndex{\Huge,\huge,\LARGE,\Large,\large,\normalsize}
+% \DoNotIndex{\small,\footnotesize,\scriptsize,\tiny}
+% \DoNotIndex{\normalfont,\bfseries,\slshape,\interlinepenalty}
+% \DoNotIndex{\hfil,\par,\vskip,\vspace,\quad}
+% \DoNotIndex{\centering,\raggedright}
+% \DoNotIndex{\c@secnumdepth,\@startsection,\@setfontsize}
+% \DoNotIndex{\ ,\@plus,\@minus,\p@,\z@,\@m,\@M,\@ne,\m@ne}
+% \DoNotIndex{\@@par}
+%
+%
+% \GetFileInfo{LNOR.dtx}
+%
+%
+% \MakeShortVerb{\|}
+% \setcounter{StandardModuleDepth}{1}
+%
+%
+% \newcommand{\ctex}{\texttt{ctex}}
+% \newcommand{\ctexorg}{\texttt{ctex.org}}
+% \newcommand{\LNOR}{\texttt{LNOR}}
+%
+%
+% \setlength{\parskip}{0.75ex plus .2ex minus .5ex}
+% \renewcommand{\baselinestretch}{1.2}
+%
+%
+% \makeatletter
+% \def\parg#1{\mbox{$\langle${\it #1\/}$\rangle$}}
+% \def\@smarg#1{{\tt\string{}\parg{#1}{\tt\string}}}
+% \def\@marg#1{{\tt\string{}{\rm #1}{\tt\string}}}
+% \def\marg{\@ifstar\@smarg\@marg}
+% \def\@soarg#1{{\tt[}\parg{#1}{\tt]}}
+% \def\@oarg#1{{\tt[}{\rm #1}{\tt]}}
+% \def\oarg{\@ifstar\@soarg\@oarg}
+% \makeatother
+%
+%
+% \title{\bf \LNOR{} Package Manual\thanks
+%   {This file version is \fileversion{}, last updated at \filedate{}¡£}}
+% \author{\it Ling-Yun Wu\thanks{aloft@ctex.org}}
+% \date{\small Print date: \today}
+% \maketitle
+%
+%
+% \begin{abstract}
+% \LNOR{} package is the \LaTeX{} document class for the Lecture Notes in
+% Operations Research (LNOR).
+%
+% \LNOR{} package is created and maintained by \ctexorg{}.
+% \end{abstract}
+%
+%
+% \tableofcontents
+%
+%
+% \section{Introduction}
+%
+% TODO
+%
+%
+% \section{Usage}
+%
+% TODO
+%
+%
+% \subsection{Options}
+%
+% TODO
+%
+%
+% \subsection{Basic Commands}
+%
+% TODO
+%
+%
+%
+%
+% \StopEventually{
+% } ^^A end StopEventually
+%
+%
+%
+%
+% \section{Source Codes}
+%
+%
+%
+%
+% \subsection{Options}
+%
+%
+% Parse options with parameters.
+%    \begin{macrocode}
+%<*cls>
+\RequirePackage{keyval}
+\def\ProcessOptionsWithKV#1{%
+  \let\LNOR@tempa\@empty
+  \def\LNOR@getoptionname##1=##2\@nil{##1}
+  \@for\CurrentOption:=\@classoptionslist\do{%
+    \@ifundefined{%
+      KV@#1@\expandafter\LNOR@getoptionname\CurrentOption=\@nil
+    }{}{%
+      \edef\LNOR@tempa{\LNOR@tempa,\CurrentOption,}%
+      \expandafter\def\csname ds@\CurrentOption\endcsname{}
+    }%
+  }%
+  \edef\LNOR@tempa{\noexpand\setkeys{LNOR}{\LNOR@tempa}}
+  \LNOR@tempa
+}%
+%</cls>
+%    \end{macrocode}
+%
+%
+% Config file name.
+%    \begin{macrocode}
+%<*cls>
+%<*art>
+\def\LNOR@config{LNOR}
+\define@key{LNOR}{config}[LNOR]{\def\LNOR@config{#1}}
+%</art>
+%<*col>
+\def\LNOR@config{LNORcol}
+\define@key{LNOR}{config}[LNORcol]{\def\LNOR@config{#1}}
+%</col>
+%</cls>
+%    \end{macrocode}
+%
+%
+% Use dvips or dvipdfm.
+%    \begin{macrocode}
+%<*cls&art>
+\newif\ifLNOR@dvips \LNOR@dvipsfalse
+\DeclareOption{dvips}{\LNOR@dvipstrue}
+\DeclareOption{dvipdfm}{\LNOR@dvipsfalse}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% Generate PDF for printing.
+%    \begin{macrocode}
+%<*cls>
+\newif\ifLNOR@print \LNOR@printtrue
+\DeclareOption{print}{\LNOR@printtrue}
+\DeclareOption{screen}{\LNOR@printfalse}
+%</cls>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1e}{2009/08/27}{Add debug option}
+% Debug mode
+%    \begin{macrocode}
+%<*cls>
+\newif\ifLNOR@debug \LNOR@debugfalse
+\DeclareOption{debug}{\LNOR@debugtrue}
+%</cls>
+%    \end{macrocode}
+%
+%
+% Use PostScript fonts.
+%    \begin{macrocode}
+%<*cls>
+\newif\ifLNOR@psfont \LNOR@psfonttrue
+\DeclareOption{psfont}{\LNOR@psfonttrue}
+\DeclareOption{cmfont}{\LNOR@psfontfalse}
+%</cls>
+%    \end{macrocode}
+%
+%
+% Pass undefined options to underlying document class.
+%    \begin{macrocode}
+%<cls&art>\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+%<cls&col>\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
+%    \end{macrocode}
+%
+%
+% Parse options.
+%    \begin{macrocode}
+%<*cls>
+\ProcessOptionsWithKV{LNOR}
+\ProcessOptions
+%</cls>
+%    \end{macrocode}
+%
+%
+% Load default document class.
+%    \begin{macrocode}
+%<cls&art>\LoadClass[10pt,a4paper]{article}
+%<cls&col>\LoadClass[10pt,a4paper]{book}
+%    \end{macrocode}
+%
+%
+% Load frequently used packages
+%    \begin{macrocode}
+%<*cls>
+\ifLNOR@psfont
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{textcomp}
+  \RequirePackage{mathptmx}
+  \RequirePackage[scaled]{helvet}
+  \RequirePackage{courier}
+\else
+  \RequirePackage{type1cm}
+\fi
+\RequirePackage{indentfirst,fancyhdr,url}
+%% check pdfTeX mode
+\RequirePackage{ifpdf}
+%</cls>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1h}{2010/07/30}{Add epstopdf package}
+%    \begin{macrocode}
+%<*cls&art>
+%% math packages
+\RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
+%% graphics packages
+\RequirePackage{graphicx,epstopdf}
+%% other packages
+%% hyperref package
+\ifpdf   % We're running pdfTeX in PDF mode
+  \RequirePackage[pdftex]{hyperref}
+\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
+  \ifLNOR@dvips
+    \RequirePackage[dvips]{hyperref}
+  \else
+    \RequirePackage[dvipdfm]{hyperref}
+  \fi
+\fi
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1g}{2009/09/27}{Set pdf minor version as 5}
+%    \begin{macrocode}
+%<*cls&col>
+\RequirePackage{makeidx}
+\pdfminorversion=5
+\ifpdf\else % We're not running pdftex
+  \PackageError{LNORcol}{%
+            You are not using pdfLaTeX.\MessageBreak
+            Package LNORcol does not work with other TeX implementations}{%
+            Please, change to pdfLaTeX to use this package!}%
+\fi
+\RequirePackage{pdfpages}
+\RequirePackage[pdftex]{hyperref}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% Set hyperref package.
+%    \begin{macrocode}
+%<*cls>
+\hypersetup{CJKbookmarks,%
+       bookmarksnumbered,%
+              colorlinks,%
+               linkcolor=blue,%
+               citecolor=blue,%
+              plainpages=false,%
+            pdfstartview=FitH}
+\ifLNOR@print
+  \hypersetup{colorlinks=false}
+\fi
+%</cls>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<cls>\AtEndOfPackage{\makeatletter\input{\LNOR@config.cfg}\makeatother}
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Global settings and definitions}
+%
+%
+% Page settings.
+%    \begin{macrocode}
+%<*cls|cfg>
+%%
+%% the global environments
+%%
+\oddsidemargin 7 true mm
+\if@twoside
+  \evensidemargin 7 true mm
+\else
+  \evensidemargin 7 true mm
+\fi
+\textheight 195 true mm
+\textwidth 125 true mm
+\headheight 15pt
+\headsep 18pt
+\parskip .5ex plus .25ex minus .25ex
+\def\baselinestretch{1}\selectfont
+%</cls|cfg>
+%    \end{macrocode}
+%
+%
+% List settings.
+%    \begin{macrocode}
+%<*cls>
+\def\@listi{\leftmargin\leftmargini
+            \topsep    6\p@ \@plus2\p@ \@minus4\p@
+            \parsep    \z@
+            \itemsep   \parsep}
+\let\@listI\@listi
+\@listi
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep    4\p@ \@plus2\p@ \@minus\p@
+              \parsep    \z@
+              \itemsep   \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep    2\p@ \@plus\p@ \@minus\p@
+              \parsep    \z@
+              \partopsep \p@ \@plus\z@ \@minus\p@
+              \itemsep   \parsep}
+%</cls>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cfg>
+ \def\LNOR@abstract{Abstract}
+ \def\LNOR@keywords{Keywords}
+ \renewcommand{\indexname}{Author Index}
+%</cfg>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Page style}
+%
+%
+% Set header.
+%    \begin{macrocode}
+%<*cls&col>
+\def\LNOR@titlemark{}
+\newcommand*\titlemark[1]{\def\LNOR@titlemark{#1}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cfg>
+%%
+%% the page styles
+%%
+%</cfg>
+%    \end{macrocode}
+%
+%
+% Page style of first page.
+%    \begin{macrocode}
+%<*cfg&col>
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+% General page style.
+%    \begin{macrocode}
+%<*cfg&col>
+\pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[RE]{\small \LNOR@titlemark}
+  \fancyhead[LO]{\small \leftmark}
+  \fancyhead[LE,RO]{\small ~\thepage~}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+% Page style is not applicable for single paper.
+%    \begin{macrocode}
+%<*cfg&art>
+\pagestyle{empty}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\cleardoublepage}
+% Redefine \cs{cleardoublepage} to set page style of empty page.
+%    \begin{macrocode}
+%<*cls&col>
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+  \thispagestyle{empty}%
+  \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+%
+% \subsection{Table of contents}
+%
+%
+% \begin{macro}{\tableofcontents}
+% Set style of TOC.
+%    \begin{macrocode}
+%<*cls&col>
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \Nchapter{\contentsname}%
+    \@mkboth{\contentsname}{\contentsname}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi
+    }
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% TOC style of chapter entry.
+%    \begin{macrocode}
+%<*cls&col>
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 0.5ex \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak
+      \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{$\cdot$}\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\Nchapter}
+% For chapter without number but listed in TOC.
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\Nchapter[1]{%
+  \if@mainmatter%
+    \@mainmatterfalse%
+    \chapter{#1}%
+    \@mainmattertrue%
+  \else
+    \chapter{#1}%
+  \fi}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\Npart}
+% For part without number but listed in TOC.
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\phantomref[1]{%
+ \Hy@GlobalStepCount\Hy@linkcounter
+ \xdef\@currentHref{#1*.\the\Hy@linkcounter}%
+ \Hy@raisedlink{\hyper@anchorstart{\@currentHref}\hyper@anchorend}%
+}
+\newcommand\Npart[1]{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{plain}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \phantomref{part}
+  \addcontentsline{toc}{part}{#1}
+  \@spart{#1}}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+%
+% \subsection{Collect paper information}
+%
+%
+% Collect paper information.
+%    \begin{macrocode}
+%<*cls&art>
+\newif\ifcollection \collectiontrue
+\gdef\collection@title{}
+\gdef\collection@titlemark{}
+\gdef\collection@author{}
+%</cls&art>
+%    \end{macrocode}
+%
+% \changes{v0.1f}{2009/09/27}{Use immediate protected write}
+%  Define immediate-protected-write based on protected-write defined in ltfiles.dtx
+%    \begin{macrocode}
+%<*cls&art>
+\long\def \immediate@protected@write#1#2#3{%
+  \begingroup
+    \let\thepage\relax
+    #2%
+    \let\protect\@unexpandable@protect
+    \edef\reserved@a{\immediate\write#1{#3}}%
+    \reserved@a
+  \endgroup
+  \if@nobreak\ifvmode\nobreak\fi\fi
+}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&art>
+\newwrite\LNOR@collection
+\immediate\openout \LNOR@collection \jobname.col
+\immediate\write\LNOR@collection{\space\string\clearpage}
+\def\collection@write#1{%
+  \immediate@protected@write\LNOR@collection
+    {\let\footnote\@gobble \let\thanks\@gobble
+     \let\label\@gobble \let\index\@gobble \let\glossary\@gobble}
+    {#1}}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1d}{2009/08/21}{Fix the bug when using pdfLaTeX by fixing the AtEndDocument order}
+% \changes{v0.1f}{2009/09/27}{Fix the bug when figure floating to the end}
+%    \begin{macrocode}
+%<*cls&art>
+\let\LNOR@enddocumenthook\@enddocumenthook
+\def\AtEndDocument{\g@addto@macro\LNOR@enddocumenthook}
+\def\@enddocumenthook{\LNOR@writecol\LNOR@enddocumenthook}
+\def\LNOR@writecol{
+  \collection@write{\space\string\AddArticle}
+  \collection@write{\space\space\space{\collection@title}}
+  \collection@write{\space\space\space{\collection@titlemark}}
+  \collection@write{\space\space\space{\collection@author}}
+  \collection@write{\space\space\space{\jobname.pdf}}
+}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Paper title}
+%
+%
+% Set paper title.
+%    \begin{macrocode}
+%<*cls&art>
+\renewcommand*{\title}[3][\@empty]{%
+  \gdef\@title{#2\@titlenote{#3}}
+  \ifcollection
+    \gdef\collection@title{#2}
+    \gdef\collection@titlemark{#1}
+  \fi}
+\newcommand*{\@titlenote}[1]{%
+  \def\LNOR@title@footnote{#1}%
+  \ifx \LNOR@title@footnote\@empty\else
+    \footnote{#1}%
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% Set authors.
+%    \begin{macrocode}
+%<*cls&art>
+\gdef\@author{}
+\renewcommand*{\author}[3][]{%
+  \ifx \@author\@empty
+    \gdef\@author{\@authorname{#2}\@authornote{#1}{#3}}
+  \else
+    \expandafter\gdef\expandafter\@author\expandafter
+      {\@author\and\@authorname{#2}\@authornote{#1}{#3}}
+  \fi
+  \collection@write{\space\string\index{#2}}
+  \ifcollection
+    \@authorname@swap{#2}{\LNOR@authorname}
+    \ifx \collection@author\@empty
+      \expandafter\gdef\expandafter\collection@author\expandafter{\LNOR@authorname}
+    \else
+      \expandafter\expandafter\expandafter\gdef
+      \expandafter\expandafter\expandafter\collection@author
+      \expandafter\expandafter\expandafter{%
+      \expandafter\collection@author\expandafter,\expandafter\space\LNOR@authorname}
+    \fi
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@authorname#1{\@@authorname#1,\@nil}
+\def\@@authorname#1,#2\@nil{%
+  \def\LNOR@author@name{#2}
+  \ifx \LNOR@author@name\@empty#1\else
+    \@@authorname#2\@nil\space#1\fi}
+\def\@authorname@swap#1#2{\@@authorname@swap#1,\@nil#2\@nil}
+\def\@@authorname@swap#1,#2\@nil#3\@nil{%
+  \def\LNOR@author@name{#2}
+  \ifx \LNOR@author@name\@empty
+    \gdef#3{#1}
+  \else
+    \@@authorname@swap#2\@nil#3\@nil
+    \expandafter\gdef\expandafter#3\expandafter{#3 #1}
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@authornote#1#2{%
+  \def\LNOR@author@address{#1}%
+  \def\LNOR@author@footnote{#2}%
+  \ifx \LNOR@author@address\@empty
+    \ifx \LNOR@author@footnote\@empty\else
+      \footnote{#2}%
+    \fi
+  \else
+    \textsuperscript{#1}%
+    \ifx \LNOR@author@footnote\@empty\else
+      \textsuperscript{,}%
+      \footnote{#2}%
+    \fi
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% Set addresses.
+%    \begin{macrocode}
+%<*cls&art>
+\gdef\@address{}
+\newcommand*{\address}[2][]{%
+  \ifx \@address\@empty
+    \gdef\@address{\@addressline{#1}{#2}}
+  \else
+    \expandafter\gdef\expandafter\@address\expandafter
+      {\@address\tabularnewline\@addressline{#1}{#2}}
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@addressline#1#2{\@addresscr\hb@xt@1ex{\textsuperscript{#1}\hss}#2}
+\def\@addresscr{\def\\{\tabularnewline\@addresscr\hbox to1ex{}\ignorespaces}}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% Generate paper title.
+%    \begin{macrocode}
+%<*cls&art>
+\renewcommand\maketitle{\par
+  \begingroup
+    \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+    \def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hb@xt@1.8em{%
+                \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
+    \if@twocolumn
+      \ifnum \col@number=\@ne
+        \@maketitle
+      \else
+        \twocolumn[\@maketitle]%
+      \fi
+    \else
+      \global\@topnum\z@   % Prevents figures from going at top of page.
+      \@maketitle
+    \fi
+    \thispagestyle{plain}\@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\@title\@empty
+  \global\let\@author\@empty
+  \global\let\@address\@empty
+  \global\let\@thanks\@empty
+}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@maketitle{%
+  \begingroup\centering%
+  \let\footnote\thanks
+    {\bfseries\LARGE \@title \par}%
+    \vskip 3ex%
+    {\normalfont\normalsize\large
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1ex%
+    {\normalfont\normalsize\small
+      \begin{tabular}[t]{@{}l@{}}%
+        \@address
+      \end{tabular}\par}%
+  \endgroup}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&art>
+\AtBeginDocument{\null\vskip 50pt}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Abstracts and keywords}
+%
+%
+% Abstracts and keywords.
+%    \begin{macrocode}
+%<*cls&art>
+\def\LNOR@abstract{Abstract}
+\def\LNOR@keywords{Keywords}
+\renewenvironment{abstract}
+  {\trivlist\itemindent\parindent\item\relax%
+   \small\noindent%
+   \textbf{\LNOR@abstract}\quad\ignorespaces}
+  {\endtrivlist}
+\newcommand*\keywords[1]{%
+  \vskip .5ex\noindent
+  \textbf{\LNOR@keywords}\quad#1\par}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Sections}
+%
+%
+% Formatting of section titles.
+%    \begin{macrocode}
+%<*cls&art>
+%%
+%% the section formats
+%%
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-1.5ex \@plus -.5ex \@minus -.2ex}%
+                                   {.5ex \@plus .1ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-1.25ex \@plus -.5ex \@minus -.2ex}%
+                                     {.4ex \@plus .1ex}%
+                                     {\normalfont\large\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-1ex \@plus -.5ex \@minus -.2ex}%
+                                     {.3ex \@plus .1ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {-.75ex \@plus -.25ex \@minus -.2ex}%
+                                    {.2ex \@plus .1ex}%
+                                    {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+                                       {-.5ex \@plus -.25ex \@minus -.2ex}%
+                                       {.1ex \@plus .1ex}%
+                                      {\normalfont\normalsize\bfseries}}
+\renewcommand\theparagraph    {\@arabic\c@paragraph}
+\renewcommand\thesubparagraph {\@alph\c@subparagraph}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Figures and tables}
+%
+%
+%    \begin{macrocode}
+%<*cls>
+\renewcommand{\floatpagefraction}{0.80}
+%</cls>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Theorems}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\newtheoremstyle{break}% name
+  {}%      Space above, empty = `usual value'
+  {}%      Space below
+  {\itshape}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cfg&art>
+%%
+%% the theorems definitions
+%%
+\theoremstyle{plain}
+  \newtheorem{algo}{Algorithm~}
+  \newtheorem{thm}{Theorem~}
+  \newtheorem{lem}[thm]{Lemma~}
+  \newtheorem{prop}[thm]{Proposition~}
+  \newtheorem{cor}[thm]{Corollary~}
+\theoremstyle{definition}
+  \newtheorem{defn}{Definition~}
+  \newtheorem{conj}{Conjecture~}
+  \newtheorem{exmp}{Example~}
+  \newtheorem{rem}{Remark~}
+  \newtheorem{case}{Case~}
+\theoremstyle{break}
+  \newtheorem{bthm}[thm]{Theorem~}
+  \newtheorem{blem}[thm]{Lemma~}
+  \newtheorem{bprop}[thm]{Proposition~}
+  \newtheorem{bcor}[thm]{Corollary~}
+\renewcommand{\proofname}{\bf Proof}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Acknowledgements}
+%
+%
+% \changes{v0.1h}{2010/07/30}{Add Acknowledgement command}
+%    \begin{macrocode}
+%<*cls&art>
+\newcommand*\Acknowledgements{%
+  \subsection*{Acknowledgements}}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Bibliography}
+%
+%
+% \changes{v0.1b}{2009/08/04}{Decrease the space between and the font size of bibitems}
+%    \begin{macrocode}
+%<*cls&art>
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \vskip 6\p@
+      \itemsep 2\p@ \@plus\p@ \@minus\p@
+      \small
+      \def\baselinestretch{1}\selectfont
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cfg&art>
+\bibliographystyle{plain}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Appendix}
+%
+%
+%    \begin{macrocode}
+%<*cls&art>
+\let\LNOR@save@appendix\appendix
+\renewcommand*\appendix{\LNOR@save@appendix%
+  \numberwithin{equation}{section}
+  \numberwithin{algo}{section}
+  \numberwithin{thm}{section}
+  \numberwithin{defn}{section}
+  \numberwithin{conj}{section}
+  \numberwithin{exmp}{section}
+  \numberwithin{rem}{section}
+  \numberwithin{case}{section}
+}%
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Integrate PDF}
+%
+%
+% \changes{v0.1c}{2009/08/12}{Fix the bug in calling AddHTMLtoc}
+% \changes{v0.1j}{2010/10/18}{Automatically determine the page number of pdf file}
+%    \begin{macrocode}
+%<*cls&col>
+%% \AddArticle{title}{short title}{author}{pdffile}
+\newcommand{\AddArticle}[4]{%
+  \LNOR@checkpdffile{#4}%
+  \LNOR@getpagecount{\LNOR@pdffile}%
+  \includepdf[pages={1},pagecommand={\LNOR@firstpagecommand{#1}{#3}{\LNOR@pdffile}}]{\LNOR@pdffile}%
+  \ifnum\LNOR@pagecount>1
+    \includepdf[pages={2-\LNOR@pagecount},pagecommand={\LNOR@secondpagecommand{#1}{#2}{\LNOR@pdffile}}]{\LNOR@pdffile}%
+  \fi\AddHTMLtoc{#1}{#3}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1f}{2009/09/27}{Add AddPages command to insert any pages from pdf}
+%    \begin{macrocode}
+%<*cls&col>
+%% \AddPages{short title}{pages}{pdffile}
+\newcommand{\AddPages}[3]{%
+  \LNOR@checkpdffile{#3}%
+  \includepdf[pages={#2},pagecommand={\LNOR@secondpagecommand{#1}{#1}{\LNOR@pdffile}}]{\LNOR@pdffile}%
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1k}{2010/10/18}{Check if pdf file exists}
+%    \begin{macrocode}
+%<*cls&col>
+\def\LNOR@checkpdffile#1{%
+  \let\LNOR@pdffile\relax
+  \IfFileExists{#1.pdf}{\edef\LNOR@pdffile{#1.pdf}}{%
+    \IfFileExists{#1}{\edef\LNOR@pdffile{#1}}{%
+      \PackageError{LNOR}{Cannot find file `#1'}{}}}
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1a}{2007/07/27}{Add support to generate HTML toc}
+%    \begin{macrocode}
+%<*cls&col>
+\newwrite\LNOR@htmltoc
+\immediate\openout \LNOR@htmltoc \jobname.htm
+\def\htmltoc@write#1{%
+  \protected@write\LNOR@htmltoc
+    {\let\footnote\@gobble \let\thanks\@gobble
+     \let\label\@gobble \let\index\@gobble \let\glossary\@gobble}
+    {#1}}
+\newcounter{LNOR@papernum}
+\setcounter{LNOR@papernum}{0}
+\def\papernum{%
+  \ifnum\c@LNOR@papernum<100 0\fi
+  \ifnum\c@LNOR@papernum<10  0\fi
+  \theLNOR@papernum}
+\newcommand{\LNOR@addHTMLtoc}[3]{%
+  \addtocounter{LNOR@papernum}{1}
+  \htmltoc@write{<p><b><a href="#1\papernum.pdf">#2</a></b><br>#3</p>}
+}
+\newcommand{\AddHTMLtoc}[2]{%
+  \LNOR@addHTMLtoc{LNOR}{#1}{#2}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1i}{2010/08/03}{Debug mode: show pdf file name in the right side}
+%    \begin{macrocode}
+%<*cls&col>
+\def\LNOR@firstpagecommand#1#2#3{%
+  \phantomref{chapter}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \addtocontents{toc}{{\it #2}\par}%
+  \thispagestyle{plain}%
+  \LNOR@showpubinfo%
+  \ifLNOR@debug
+    \begingroup
+      \hskip\textwidth
+      \Huge\bf\noindent
+      \LNOR@escape{#3}
+    \endgroup
+  \fi
+}
+\def\LNOR@secondpagecommand#1#2#3{%
+  \fancyhead[LO]{\if!#2! #1 \else #2 \fi}
+  \ifLNOR@debug
+    \begingroup
+      \hskip\textwidth
+      \Huge\bf\noindent
+      \LNOR@escape{#3}
+    \endgroup
+  \fi
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&col>
+\def\LNOR@escape@underscore#1_#2\@nil{#1\if!#2! \else\_\LNOR@escape@underscore#2\@nil\fi}
+\def\LNOR@escape#1{%
+  \LNOR@escape@underscore#1_\@nil}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% Get last page number of each paper.
+%    \begin{macrocode}
+%<*cls&col>
+\newcount\LNOR@pagecount
+\def\LNOR@getpagecount#1{
+  \pdfximage{#1}%
+  \edef\LNOR@pagecount{\the\pdflastximagepages}}
+\newcount\LNOR@lastpage
+\def\lastpage{\the\LNOR@lastpage}
+\def\LNOR@getlastpage{%
+  \LNOR@lastpage\c@page\relax%
+  \advance\LNOR@lastpage \LNOR@pagecount\relax%
+  \advance\LNOR@lastpage -1\relax}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% Add copyright information in the first page of each paper.
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\LNOR@showpubinfo{%
+  \LNOR@getlastpage%
+  \begingroup\noindent
+  \def\baselinestretch{1}\footnotesize
+  \LNOR@pubinfo\par\endgroup}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% Copyright information.
+%    \begin{macrocode}
+%<*cfg&col>
+\def\LNOR@pubinfo{%
+  The First International Symposium on Optimization and Systems Biology (OSB'07)\\
+  Beijing, China, August 7--9, 2007\\
+  Copyright~\copyright{} 2007 ORSC \& APORC, pp.~\thepage--\lastpage}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand*\PubInfo[1]{\def\LNOR@pubinfo{#1}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{Author index}
+%
+%    \begin{macrocode}
+%<*cls&col>
+\makeindex
+\newcommand\AuthorIndex{%
+  \clearpage
+  \phantomref{part}
+  \addcontentsline{toc}{part}{\indexname}
+  \fancyhead[LO]{\indexname}
+  \printindex
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%
+%
+% \Finale
+%
+% \setcounter{IndexColumns}{2}
+% \IndexPrologue{\section*{Index} {\it Numbers written in italic refer to the page
+%   where the corresponding entry is described; numbers underlined refer to the
+%   code line of the definition; numbers in roman refer to the code lines where
+%   the entry is used.}}
+%
+% \GlossaryPrologue{\section*{Version history}}
+%
+% \PrintIndex \PrintChanges
+\endinput

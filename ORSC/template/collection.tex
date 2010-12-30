@@ -1,0 +1,53 @@
+%% Collection Template for ORSC Annual Conference
+%% 中国运筹学会年会论文集模板
+%%
+%% Created by Ling-Yun Wu <aloft@ctex.org>
+%%
+%% $Id: collection.tex,v 1.3 2006/06/15 08:38:17 aloft Exp $
+
+\documentclass{ORSCcol}
+
+
+\begin{document}
+
+\title{中国运筹学会学术论文模板}
+\author{吴凌云}
+
+\titlemark{中国运筹学会学术交流会论文集}
+
+\maketitle
+
+
+
+\tableofcontents
+
+
+\Npart{大会报告}
+
+% 手工添加方式
+ \clearpage
+ \index{吴凌云}
+ \index{刘德刚}
+ \index{胡洁}
+ \index{Wu, Ling-Yun}
+ \index{Liu, De-Gang}
+ \index{Hu, Jie}
+ \AddArticle{中国运筹学会学术论文模板}   % 目录中的论文题目
+            {}                           % 页眉中的题目，为空时自动使用第一个参数
+            {吴凌云，刘德刚，胡洁}       % 目录中的作者姓名
+            {template}               % 论文的pdf文件名
+
+% 自动生成方式
+\input{template.col}
+
+
+\Npart{分组报告}
+
+\input{template.col}
+
+\input{template.col}
+
+
+\AuthorIndex
+
+\end{document}

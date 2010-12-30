@@ -1,0 +1,259 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newpage
+ \normalfont\normalsize
+
+ \vspace*{10pt}
+
+ \huge\bf\noindent
+ Lecture Notes in \\[-10pt]
+ Operations Research   \hfill   {\fontsize{50pt}{50pt}\selectfont 7 \quad}
+
+ \vskip 10pt
+
+ \Large\rm\noindent
+ Series Editors: \\
+ \quad Ding-Zhu Du and Xiang-Sun Zhang
+
+ \vskip 30pt
+
+ \Huge\bf\noindent
+ OPTIMIZATION AND \\
+ SYSTEMS BIOLOGY
+
+ \vskip 10pt
+
+ \large\rm\noindent
+ The First International Symposium, OSB'07 \\
+ Beijing, China, August 8--10, 2007 \\
+ Proceedings
+
+ \vskip 30pt
+
+ \Large\rm\noindent
+ Edited by \\[3pt]
+ \quad  Xiang-Sun Zhang \\
+ \quad  Luonan Chen \\
+ \quad  Ling-Yun Wu \\
+ \quad  Yong Wang
+
+ \vfill
+
+ \Large\rm\noindent
+ WORLD PUBLISHING CORPORATION
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newpage
+ \normalfont\normalsize
+
+ \vspace*{10pt}
+
+ \noindent{\bf Series Editors}
+
+ \vskip 10pt
+
+ \noindent
+ \begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
+  Ding-Zhu Du                                \newline
+  Department of Computer Science             \newline
+  University of Texas at Dallas              \newline
+  Richardson, TX 75083-0688, USA
+ &
+  Xiang-Sun Zhang                            \newline
+  Institute of Applied Mathematics           \newline
+  Academy of Mathematics and Systems Science \newline
+  Chinese Academy of Science                 \newline
+  Beijing 100080, P.R. China
+ \end{tabular}
+
+ \vskip 30pt
+
+ \noindent{\bf Volume Editors}
+
+ \vskip 10pt
+
+ \noindent
+ Xiang-Sun Zhang \\
+ Luonan Chen \\
+ Ling-Yun Wu \\
+ Yong Wang
+
+ \vfill
+
+ \noindent
+ Published by {\bf World Publishing Corporation} \\
+ 137 Chaonei Dajie, Beijing 100010 \\
+ The People's Republic of China
+
+ \vskip 10pt
+
+ \noindent
+ Copyright \copyright{}2007 by World Publishing Corporation \\
+
+ \it\noindent
+ The book has been photographically reproduced from the best
+ available copy. Unauthorized use might infringe on privately owned
+ patents of publication rights. Please contact the individual
+ authors for the permission to reprint or otherwise use information
+ from their papers.
+
+ \vskip 10pt
+
+ \bf\noindent
+ ISBN 978-7-5062-7292-6/O$\cdot$568
+
+ \vskip 10pt
+
+ \rm\noindent
+ Printed in the People's Republic of China
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newpage
+ \normalfont\normalsize
+
+ \centerline{\bf\Large ABOUT OSB 2007}
+
+ \bigskip
+
+ \noindent{\bf THEME AND SCOPE}
+
+ \medskip
+
+ \noindent
+The First International Symposium on Optimization and Systems
+Biology (OSB 2007), organized by Academy of Mathematics and Systems
+Science within Chinese Academy of Sciences, Shanghai University and
+The University of Tokyo is held in Beijing, China from August 8 to
+10, 2007. The symposium is sponsored by National Natural Science
+Foundation of China (NSFC).
+
+ \medskip
+
+ \noindent
+Systems Biology has become intensive research topics in the recent
+past decade and attracted much attention of scientists in various
+areas, such Biology, Mathematics, Physics, and Computer Science.
+Instead of analyzing individual components or aspects of the
+organism, systems biology is to study an organism, viewed as a
+dynamical and interacting network of genes, proteins and biochemical
+reactions which give rise to life. Many mathematical methods have
+been adopted in the field. In particular, optimization and
+statistics play a key role in analyzing and understanding biological
+mechanisms from system-wide viewpoints. The purpose of OSB 2007 is
+to provide an international forum for scientists, researchers,
+educators, and practitioners to exchange ideas and approaches, to
+present research findings and state-of-the-art solutions in this
+interdisciplinary field, including optimization methods and their
+applications on various aspects of Systems Biology.
+
+ \medskip
+
+ \noindent
+Theme of the OSB 2007 is interdisciplinary and focuses on
+computational aspect of Optimization and Computational Systems
+Biology. We are particularly interested in submissions for the
+research works motivated by biological problems. Typical, but not
+exclusive, topics of interest are:
+
+ \begin{center}
+ \begin{tabular}{l}
+  Optimization Theory \& Applications \\
+  Approximation Algorithms \\
+  Combinatorics \\
+  Neural Networks \\
+  Data Mining \\
+  Machine Learning \\
+  High Performance Computing \\
+  Information Theory and Statistical Analysis \\
+\\
+  Gene Regulatory Network \\
+  Protein Interaction Network \\
+  Protein Structures and Functions \\
+  Comparative Genomics \\
+  Microbial Community Analysis \\
+  Quantitative Models of Cellular \& Multi-Cellular Systems \\
+  Designing and Modeling Synthetic Biological Systems \\
+  Nonlinear Dynamics and Analysis of Biological Systems
+ \end{tabular}
+ \end{center}
+
+ \bigskip
+
+ \noindent
+ \begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
+  {\bf PROGRAM COMMITTEE}             \medskip \\
+  Kazuyuki Aihara (Japan), Co-Chair \\
+  Luonan Chen (China), Co-Chair     \\
+  Xiang-Sun Zhang (China), Co-Chair \\
+  Tatsuya Akutsu (Japan)           & Guojun Li (China)         \\
+  William R. Atchley (USA)         & Jie Liang (USA)           \\
+  Xiuli Chao (USA)                 & Haiyan Liu (China)        \\
+  Runsheng Chen (China)            & Jun Liu (USA)             \\
+  Kwang-Hyun Cho (Korea)           & Zengrong Liu (China)      \\
+  Ali Cinar (USA)                  & Hiroshi Mamitsuka (Japan) \\
+  Naiyang Deng (China)             & Kenji Mizuguchi (Japan)   \\
+  Andreas Dress (China)            & Haruki Nakamura (Japan)   \\
+  Ding-Zhu Du (USA)                & Yi Pan (USA)              \\
+  Shu-Cherng Fang (USA)            & Yonghong Peng (UK)        \\
+  Susumu Goto (Japan)              & Stephen Wong (USA)        \\
+  De-Shuang Huang (China)          & Jiarui Wu (China)         \\
+  Jenn-Kang Hwang (Taiwan, China)  & Yu Xia (USA)              \\
+  Christopher Lee (USA)            & Dong Xu (USA)             \\
+  Doheon Lee (Korea)               & Yaoqi Zhou (USA)          \\
+ \end{tabular}
+
+% \newpage
+ \bigskip
+
+ \noindent{\bf PROCEEDING PAPERS AND CONTRIBUTING AUTHORS}
+
+ \medskip
+
+ \noindent
+In Proceedings of the First International Symposium on Optimization
+and Systems Biology (OSB 2007), the papers are indexed by ISTP
+(Index to Scientific \& Technical Proceedings).
+
+ \medskip
+
+ \noindent
+Fifty three full papers in this volume cover wide range of
+optimization and systems biology. Authors of these papers come from
+Australia, China mainland, France, Hong Kong, Japan, Korea,
+Thailand, UK, and the United States. Many active researchers in
+various areas contributed their overview and introduction in their
+fields besides specific deep research achievements. During the
+symposium, focusing sessions are organized such as in optimization,
+systems biology, bioinformatics, feature selection and extraction,
+networks in cellular systems, dynamic of molecular networks, support
+vector machine, computational models and algorithms.
+
+ \medskip
+
+ \noindent
+OSB 2007 is held in Beijing, the capital of China, a metropolis
+mingled with tradition and modernity. We hope all the participants
+will enjoy very much not only the academic exchange, but also the
+rich cultural heritage of Beijing.
+
+ \bigskip
+
+ \noindent{\bf AVAILABILITY}
+
+ \medskip
+
+ \noindent
+The electronic version of the proceedings can be downloaded from the
+web sites of ORSC and APORC.
+
+ \smallskip
+
+ \noindent
+\begin{tabular}{@{}ll@{}}
+ ORSC: & \url{http://www.orsc.org.cn} \\
+ APORC: & \url{http://www.aporc.org}
+\end{tabular}

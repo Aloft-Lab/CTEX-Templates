@@ -1,0 +1,257 @@
+%% Paper Template for ORSC Academic Conference
+%% 中国运筹学会年会论文模板
+%%
+%% Created by Ling-Yun Wu <aloft@ctex.org>
+%%
+%% $Id: template.tex,v 1.5 2006/06/15 06:51:07 aloft Exp $
+
+
+%% 中文论文
+\documentclass{ORSC}
+%% 英文论文请使用
+%% \documentclass[english]{ORSC}
+%%
+%% 其他可用选项：
+%%   dvips 如果必须使用 dvips，例如使用了 psfrag 宏包
+%%   dvipdfm 使用 dvipdfm，这个是缺省选择
+%%   config=FILENAME 使用 FILENAME.cfg 代替 ORSC.cfg 作为配置文件
+%%
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 中文标题和摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{chinesetitle}
+
+\title{中国运筹学会学术论文模板}{本文的作者得到中国国家自然科学基金（\#12345678）的支持。}
+
+\author[1]{吴凌云}{通讯作者。电子邮件：lywu@amt.ac.cn}
+\author[1,2]{刘德刚}{电子邮件：dliu@amt.ac.cn}
+\author[1,2]{胡洁}{}
+
+\address[1]{应用数学所\\ 中国科学院数学与系统科学研究院，北京~100080}
+\address[2]{中国运筹学会\\ 中国科学院数学与系统科学研究院，北京~100080}
+
+\maketitle
+
+\begin{abstract}
+本文是中国运筹学会学术会议论文的~LaTeX~模板，同时也是一个排版格式指南。
+中国运筹学会是中国运筹学工作者的学术性群众团体，
+是依法成立的社团法人，是发展中国运筹学事业的一支重要社会力量，
+是中国科学技术协会的组成部分。
+
+\keywords{运筹学；年会；论文；模板；LaTeX}
+\end{abstract}
+
+\end{chinesetitle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 英文标题和摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{englishtitle}
+
+\title{LaTeX Template for the Paper of ORSC Academic
+Conference}{}
+
+\author[1]{Wu, Ling-Yun}{}
+\author[1,2]{Liu, De-Gang}{}
+\author[1,2]{Hu, Jie}{}
+
+\address[1]{Institute of Applied Mathematics\\ Academy of Mathematics and Systems Science, CAS, Beijing 100190}
+\address[2]{Operations Research Society of China, Beijing 100080}
+
+\maketitle
+
+\begin{abstract}
+This is the LaTeX template for the paper of ORSC academic
+conference. Operations Research Society of China (ORSC) is a
+juridical association, which serves the scientific and professional
+needs of OR investigators, scientists, students, educators, and
+managers. As a member of China Association for Science and
+Technology, ORSC is therefore an important social force in
+developing the country's science and technology.
+
+\keywords{Operations Research; Annual Conference; Paper; Template;
+LaTeX}
+\end{abstract}
+
+\end{englishtitle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{简介}
+
+本文是中国运筹学会学术会议的论文模板，同时也是一个排版格式指南。
+请认真按照本文的要求撰写、排版你的论文。
+提交的论文应未在其它学术会议论文集或者期刊上公开发表过。
+论文以中英文撰写均可（中文文章须附英文摘要，英文文章须附中文摘要）。
+提交的论文由标题、作者、摘要、关键词、正文和参考文献构成。
+论文全文应不超过~6~页。
+
+\LaTeX{}~模板用户无需自己定义页面大小、字体大小等设置。
+模板使用的宏包已经完成必要的设置，并提供了方便使用的命令。
+除了普通的~\LaTeX{}~命令，
+在这个模板文件中还可以找到一些可用命令的参考。
+
+\subsection{注意事项}
+
+\LaTeX{}~用户请参考本文件编写自己的论文，
+注意不要使用修改页面大小和布局的命令，
+不要在论文标题、作者、地址、以及小节标题等位置使用字体设置命令。
+
+建议尽可能使用我们提供的~\LaTeX{}~模板进行排版，
+不仅可以迅速得到符合要求的排版结果，
+加快论文的排版，而且可以得到更加精美的排版效果。
+
+\subsection{模板编译}
+
+本模板需要使用~CTeX 2.8.0~以后的版本进行编译。最新版本的~CTeX
+中文套装可以在~\href{http://www.ctex.org}{http://www.ctex.org}~网站上下载。
+
+\subsection{页面大小和布局}
+
+页面大小设置为~A4：宽~210 mm，高~297 mm。版心大小为：宽~145
+mm，高~210 mm。各边距分别为：
+\begin{itemize}
+  \item 左边距~32.5 mm
+  \item 右边距~32.5 mm
+  \item 上边距~43.5 mm
+  \item 下边距~43.5 mm
+\end{itemize}
+
+\subsection{页眉和页脚}
+
+所有页眉和页脚部分全部留空。
+
+
+\section{论文标题、作者和摘要}
+
+\subsection{论文标题}
+
+论文标题居中，上方留空~25
+mm，使用小二号（对应于~Word~中英文字号~18pt）字体，
+中文字体为黑体，英文字体为~Times New Roman~字体加黑。
+
+\subsection{作者和地址}
+
+作者姓名居中，置于论文标题下方，使用小四号（对应于~Word~中英文字号~12pt）字体，
+中文字体为宋体，英文字体为~Times New Roman~字体。
+
+各作者的地址以数字上标方式注明。地址在所有作者的下方集中列出。
+地址使用小五号（对应于~Word~中英文字号~9pt）字体， 中文字体为
+楷体，英文字体为~Times New Roman~字体。
+
+通讯作者要以脚注方式注明，并提供联系方式。
+
+\subsection{摘要和关键词}
+
+摘要位于地址的下方，行首不缩进。关键词位于摘要下方，行首不缩进。
+摘要使用小五号（对应于~Word~中英文字号~9pt）字体，中文字体为宋体，
+英文字体为~Times New Roman。
+
+中文摘要前加上“摘要”，英文摘要前加上“Abstract”，
+中文关键词前加上“关键词”，英文关键词前加上“Keywords”。
+“摘要”和“关键词”使用黑体，“Abstract”和“Keywords”使用~Times
+New Roman~加黑。以上这些词后均不换行。
+中文关键词之间以中文分号分隔，英文关键词之间以英文分号分隔。
+
+\subsection{中英文标题部分}
+
+中文文章须附英文标题和摘要，英文文章须附中文标题和摘要。
+中文文章的英文标题和摘要位于英文标题和摘要的下方，正文的上方。
+英文文章的中文标题和摘要位于中文标题和摘要的下方，正文的上方。
+
+
+\section{正文}
+
+\subsection{正文字体}
+
+正文使用五号（对应于~Word~中英文字号~10.5pt）字体，中文字体为宋体，
+英文字体为~Times New Roman。每个段落开始缩进两个汉字宽度。
+
+\subsection{小节标题结构}
+
+论文可以使用最多五级标题。小节标题统一使用以下字体：中文字体为黑体，英文使用~Time
+New Roman~字体加黑。
+
+一级标题使用阿拉伯数字进行编号。
+使用四号（对应于~Word~中英文字号~14pt）字体。
+
+二级标题使用阿拉伯数字进行编号，前面使用上级标题的编号为前缀。
+使用小四号（对应于~Word~中英文字号~12pt）字体。
+
+\subsubsection{三级标题}
+
+三级标题使用阿拉伯数字进行编号，前面使用上级标题的编号为前缀。
+使用小四号（对应于~Word~中英文字号~12pt）字体。
+
+\paragraph{四级标题}
+
+四级标题使用阿拉伯数字进行编号，后面使用圆括号。
+使用五号字（对应于~Word~中英文字号~10.5pt）。
+
+\subparagraph{五级标题}
+
+五级标题使用小写英文字母进行编号，前后使用圆括号。
+使用五号字（对应于~Word~中英文字号~10.5pt）。
+
+
+\section{参考文献}
+
+参考文献使用数字方式编号，并按照引用顺序排序。
+具体排版格式请参考本文的参考文献。例如，网址类型请参考~\cite{web}，
+论文集类型请参考~\cite{proceedings}，书籍类型请参考~\cite{book}，
+论文集中的文章类型请参考~\cite{paper:proceedings}，
+英文学术期刊中的文章类型请参考~\cite{paper:english}，
+中文学术期刊中的文章类型请参考~\cite{paper:chinese}。
+
+
+\Acknowledgements
+
+请将致谢放在最后。
+
+
+\begin{thebibliography}{99}
+
+% 网址
+\bibitem{web} 中国运筹学会. 网址: \url{http://www.orsc.org.cn}
+
+% 论文集
+\bibitem{proceedings} 章祥荪, 王建方, 刘宝碇, 刘德刚. {\it 中国运筹学会第七届学术交流会论文集}. Global-Link
+Pulishing Company, 2004.
+
+% 书籍
+\bibitem{book} 魏权龄. {\it 数据包络分析}, 科学出版社, 2004.
+
+% 论文集中的文章
+\bibitem{paper:proceedings} Richard C. Larson. Operations Research: The Science of
+Better. {\it 中国运筹学会第七届学术交流会论文集}, 1--11, Global-Link
+Pulishing Company, 2004.
+
+% 英文学术期刊中的文章
+\bibitem{paper:english} A. Charnes, W. W. Cooper and E. Rhodes. Measuring
+the efficiency of decision making units. {\it European Journal of
+Operaional Research}, 2(6), 429--444, 1978.
+
+% 中文学术期刊中的文章
+\bibitem{paper:chinese} 韩松, 魏权龄. 资源配置的非参数~DEA~模型. {\it
+系统工程理论与实践}, 22, 59--64, 2002.
+
+
+
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,1358 @@
+% \iffalse meta-comment
+%
+% Copyright 2005-2006
+% CTEX.ORG and any individual authors listed elsewhere in this file.
+%
+% This file is part of the ORSC package project.
+% ----------------------------------------------
+%
+% It may be distributed under the conditions of the LaTeX Project Public
+% License, either version 1.2 of this license or (at your option) any
+% later version. The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+%<*!(cfg|fd)>
+% \fi
+%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+%
+% \CheckSum{1228}
+%
+% \iffalse meta-comment
+%</!(cfg|fd)>
+%
+%<*driver>
+\ProvidesFile{ORSC.dtx}
+%</driver>
+%
+%<cls>\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+%<cls&art>\ProvidesClass{ORSC}
+%<cls&col>\ProvidesClass{ORSCcol}
+%<cfg&art>\ProvidesFile{ORSC.cfg}
+%<cfg&col>\ProvidesFile{ORSCcol.cfg}
+  [2010/10/18 v0.2k ORSC
+%<cls&art>   article document class]
+%<cls&col>   collection document class]
+%<cfg>   configuration file]
+%
+%<*driver>
+   bundle source file]
+%</driver>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{ctex}
+ \topmargin 1 true cm
+ \oddsidemargin 2.5 true cm
+ \evensidemargin 2.5 true cm
+ \textheight 21 true cm
+ \textwidth 14 true cm
+\EnableCrossrefs
+ %\DisableCrossrefs % Say \DisableCrossrefs if index is ready
+\CodelineIndex
+\RecordChanges      % Gather update information
+ %\OnlyDescription  % comment out for implementation details
+ %\OldMakeindex     % use if your MakeIndex is pre-v2.9
+\begin{document}
+  \DocInput{ORSC.dtx}
+\end{document}
+%</driver>
+%
+% \fi
+%
+%
+% \changes{v0.0}{2005/10/20}{Initial version}
+% \changes{v0.2}{2006/06/01}{增加自动化提取论文信息功能}
+%
+%
+% \DoNotIndex{\begin,\end,\begingroup,\endgroup}
+% \DoNotIndex{\ifx,\ifdim,\ifnum,\ifcase,\else,\or,\fi}
+% \DoNotIndex{\let,\def,\xdef,\newcommand,\renewcommand}
+% \DoNotIndex{\expandafter,\csname,\endcsname,\relax,\protect}
+% \DoNotIndex{\Huge,\huge,\LARGE,\Large,\large,\normalsize}
+% \DoNotIndex{\small,\footnotesize,\scriptsize,\tiny}
+% \DoNotIndex{\normalfont,\bfseries,\slshape,\interlinepenalty}
+% \DoNotIndex{\hfil,\par,\vskip,\vspace,\quad}
+% \DoNotIndex{\centering,\raggedright}
+% \DoNotIndex{\c@secnumdepth,\@startsection,\@setfontsize}
+% \DoNotIndex{\ ,\@plus,\@minus,\p@,\z@,\@m,\@M,\@ne,\m@ne}
+% \DoNotIndex{\@@par}
+%
+%
+% \GetFileInfo{ORSC.dtx}
+%
+%
+% \MakeShortVerb{\|}
+% \setcounter{StandardModuleDepth}{1}
+%
+%
+% \newcommand{\ctex}{\texttt{ctex}}
+% \newcommand{\ctexorg}{\texttt{ctex.org}}
+% \newcommand{\ORSC}{\texttt{ORSC}}
+%
+%
+% \setlength{\parskip}{0.75ex plus .2ex minus .5ex}
+% \renewcommand{\baselinestretch}{1.2}
+%
+%
+% \makeatletter
+% \def\parg#1{\mbox{$\langle${\it #1\/}$\rangle$}}
+% \def\@smarg#1{{\tt\string{}\parg{#1}{\tt\string}}}
+% \def\@marg#1{{\tt\string{}{\rm #1}{\tt\string}}}
+% \def\marg{\@ifstar\@smarg\@marg}
+% \def\@soarg#1{{\tt[}\parg{#1}{\tt]}}
+% \def\@oarg#1{{\tt[}{\rm #1}{\tt]}}
+% \def\oarg{\@ifstar\@soarg\@oarg}
+% \makeatother
+%
+%
+% \title{\bf \ORSC{}~宏包说明\thanks
+%   {本文件版本号为~\fileversion{}，最后修改日期~\filedate{}。}}
+% \author{\it 吴凌云\thanks{aloft@ctex.org}}
+% \date{\small 打印日期：~\today}
+% \maketitle
+%
+%
+% \begin{abstract}
+% \ORSC{}~宏包是中国运筹学会学术会议论文投稿的~\LaTeX{}~文档类。
+%
+% \ORSC{}~宏包由~\ctexorg{}~制作并负责维护。
+% \end{abstract}
+%
+%
+% \tableofcontents
+%
+%
+% \section{简介}
+%
+% TODO
+%
+%
+% \section{使用帮助}
+%
+% TODO
+%
+%
+% \subsection{选项}
+%
+% TODO
+%
+%
+% \subsection{基本命令}
+%
+% TODO
+%
+%
+%
+%
+% \StopEventually{
+% } ^^A end StopEventually
+%
+%
+%
+%
+% \section{源代码说明}
+%
+%
+%
+%
+% \subsection{选项}
+%
+%
+% \changes{v0.2a}{2006/06/15}{增加处理带参数选项的能力}
+% 用于处理带参数的选项。
+%    \begin{macrocode}
+%<*cls>
+\RequirePackage{keyval}
+\def\ProcessOptionsWithKV#1{%
+  \let\ORSC@tempa\@empty
+  \def\ORSC@getoptionname##1=##2\@nil{##1}
+  \@for\CurrentOption:=\@classoptionslist\do{%
+    \@ifundefined{%
+      KV@#1@\expandafter\ORSC@getoptionname\CurrentOption=\@nil
+    }{}{%
+      \edef\ORSC@tempa{\ORSC@tempa,\CurrentOption,}%
+      \expandafter\def\csname ds@\CurrentOption\endcsname{}
+    }%
+  }%
+  \edef\ORSC@tempa{\noexpand\setkeys{ORSC}{\ORSC@tempa}}
+  \ORSC@tempa
+}%
+%</cls>
+%    \end{macrocode}
+%
+%
+% 用于设置配置文件名的选项。
+%    \begin{macrocode}
+%<*cls>
+%<*art>
+\def\ORSC@config{ORSC}
+\define@key{ORSC}{config}[ORSC]{\def\ORSC@config{#1}}
+%</art>
+%<*col>
+\def\ORSC@config{ORSCcol}
+\define@key{ORSC}{config}[ORSCcol]{\def\ORSC@config{#1}}
+%</col>
+%</cls>
+%    \end{macrocode}
+%
+%
+% 使用~dvips~还是~dvipdfm~来处理~DVI~文件。
+%    \begin{macrocode}
+%<*cls&art>
+\newif\ifORSC@dvips \ORSC@dvipsfalse
+\DeclareOption{dvips}{\ORSC@dvipstrue}
+\DeclareOption{dvipdfm}{\ORSC@dvipsfalse}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2d}{2006/07/07}{ORSCcol~文档类中增加对中英文的不同设置}
+% 使用英文还是中文。
+%    \begin{macrocode}
+%<*cls>
+\newif\ifORSC@english \ORSC@englishfalse
+\DeclareOption{english}{\ORSC@englishtrue}
+\DeclareOption{chinese}{\ORSC@englishfalse}
+%</cls>
+%    \end{macrocode}
+%
+%
+% 是否生成打印版的~PDF。
+%    \begin{macrocode}
+%<*cls>
+\newif\ifORSC@print \ORSC@printtrue
+\DeclareOption{print}{\ORSC@printtrue}
+\DeclareOption{screen}{\ORSC@printfalse}
+%</cls>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2i}{2010/08/27}{Add debug option}
+% Debug mode
+%    \begin{macrocode}
+%<*cls>
+\newif\ifORSC@debug \ORSC@debugfalse
+\DeclareOption{debug}{\ORSC@debugtrue}
+%</cls>
+%    \end{macrocode}
+%
+%
+% 把没有定义的选项传递给底层的文档类
+%    \begin{macrocode}
+%<cls&art>\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexart}}
+%<cls&col>\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
+%    \end{macrocode}
+%
+%
+% 处理选项
+%    \begin{macrocode}
+%<*cls>
+\ProcessOptionsWithKV{ORSC}
+\ProcessOptions
+%</cls>
+%    \end{macrocode}
+%
+%
+% 装入缺省的文档类
+%    \begin{macrocode}
+%<cls&art>\LoadClass[c5size,a4paper,sub4section,fancyhdr,psfont]{ctexart}[2004/08/14]
+%<cls&col>\LoadClass[c5size,a4paper,sub4section,fancyhdr,psfont]{ctexbook}[2004/08/14]
+%    \end{macrocode}
+%
+%
+% 装入常用的宏包
+% \changes{v0.2e}{2007/01/09}{使用~ifpdf~宏包来判断是否使用~pdfTeX~直接生成~PDF~文件}
+% \changes{v0.2i}{2010/08/27}{Add epstopdf package}
+%    \begin{macrocode}
+%<*cls&art>
+%% check pdfTeX mode
+\RequirePackage{ifpdf}
+%% math packages
+\RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
+%% graphics packages
+\RequirePackage{graphicx,epstopdf}
+%% other packages
+\RequirePackage{url}
+%% hyperref package
+\ifpdf   % We're running pdfTeX in PDF mode
+  \RequirePackage[pdftex]{hyperref}
+\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
+  \ifORSC@dvips
+    \RequirePackage[dvips]{hyperref}
+  \else
+    \RequirePackage[dvipdfm]{hyperref}
+  \fi
+  \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
+\fi
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2f}{2007/07/11}{更正错误提示信息中的错误}
+% \changes{v0.2i}{2010/08/27}{Set pdf minor version as 5}
+%    \begin{macrocode}
+%<*cls&col>
+\RequirePackage{makeidx}
+\pdfminorversion=5
+\ifpdf\else % We're not running pdftex
+  \PackageError{ORSCcol}{%
+            You are not using pdfLaTeX.\MessageBreak
+            Package ORSCcol does not work with other TeX implementations}{%
+            Please, change to pdfLaTeX to use this package!}%
+\fi
+\RequirePackage{pdfpages}
+\RequirePackage[pdftex]{hyperref}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% 设置 hyperref 宏包
+%    \begin{macrocode}
+%<*cls>
+\hypersetup{CJKbookmarks,%
+       bookmarksnumbered,%
+              colorlinks,%
+               linkcolor=blue,%
+               citecolor=blue,%
+              plainpages=false,%
+            pdfstartview=FitH}
+\ifORSC@print
+  \hypersetup{colorlinks=false}
+\fi
+%</cls>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1a}{2005/11/28}{将配置文件的读取时间前移，使得导言中的设置命令优先}
+% \changes{v0.2a}{2006/06/15}{将配置文件名字改为可以通过选项设置}
+%    \begin{macrocode}
+%<cls>\AtEndOfPackage{\makeatletter\input{\ORSC@config.cfg}\makeatother}
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{全局设置与定义}
+%
+%
+% 页面设置。
+%    \begin{macrocode}
+%<*cls|cfg>
+%%
+%% the global environments
+%%
+\oddsidemargin 7 true mm
+\if@twoside
+  \evensidemargin 7 true mm
+\else
+  \evensidemargin 7 true mm
+\fi
+\textheight 210 true mm
+\textwidth 145 true mm
+\headheight 15pt
+\headsep 18pt
+\parskip .5ex plus .25ex minus .25ex
+%</cls|cfg>
+%    \end{macrocode}
+%
+%
+% 列表参数
+%    \begin{macrocode}
+%<*cls>
+\def\@listi{\leftmargin\leftmargini
+            \topsep    6\p@ \@plus2\p@ \@minus4\p@
+            \parsep    \z@
+            \itemsep   \parsep}
+\let\@listI\@listi
+\@listi
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep    4\p@ \@plus2\p@ \@minus\p@
+              \parsep    \z@
+              \itemsep   \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep    2\p@ \@plus\p@ \@minus\p@
+              \parsep    \z@
+              \partopsep \p@ \@plus\z@ \@minus\p@
+              \itemsep   \parsep}
+%</cls>
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\ORSCspace}
+% 中文空格，用于标题中。
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\ORSCspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+%
+% \subsection{中英文环境}
+%
+%
+% \changes{v0.1b}{2006/04/13}{解决英文图表和参考文献标题显示为中文的问题}
+% 中英文间的不同设置。
+%    \begin{macrocode}
+%<*cfg>
+%%
+%% the chinese or english environments
+%%
+\def\chinesematter{%
+  \def\baselinestretch{1.3}\selectfont
+  \def\ORSC@abstract{摘要}
+  \def\ORSC@keywords{关键词}
+  \def\CTEX@appendixname{附录~}
+  \renewcommand{\indexname}{作者索引}
+}
+\def\englishmatter{%
+  \def\baselinestretch{1}\selectfont
+  \def\ORSC@abstract{Abstract}
+  \def\ORSC@keywords{Keywords}
+  \def\CTEX@figurename{Figure}
+  \def\CTEX@tablename{Table}
+  \def\CTEX@bibname{References}
+  \def\CTEX@appendixname{Appendix\space}
+  \renewcommand{\indexname}{Author Index}
+}
+%</cfg>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls>
+\ifx\chinesematter\undefined
+  \def\chinesematter{%
+    \def\baselinestretch{1.3}\selectfont}
+\fi
+\ifx\englishmatter\undefined
+  \def\englishmatter{%
+    \def\baselinestretch{1}\selectfont}
+\fi
+\AtBeginDocument{
+  \ifORSC@english
+    \englishmatter
+  \else
+    \chinesematter
+  \fi}
+%</cls>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{页眉}
+%
+%
+% 设置页眉内容
+%    \begin{macrocode}
+%<*cls&col>
+\def\ORSC@titlemark{}
+\newcommand*\titlemark[1]{\def\ORSC@titlemark{#1}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2c}{2006/06/15}{将页眉设置移到配置文件中}
+%    \begin{macrocode}
+%<*cfg>
+%%
+%% the page styles
+%%
+%</cfg>
+%    \end{macrocode}
+%
+%
+% 首页的页眉设置。
+%    \begin{macrocode}
+%<*cfg&col>
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+% 普通页面的页眉设置。
+%    \begin{macrocode}
+%<*cfg&col>
+\pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[RE]{\small \ORSC@titlemark}
+  \fancyhead[LO]{\small \leftmark}
+  \fancyhead[LE,RO]{\small ~\thepage~}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+% 论文版心不需要页眉
+%    \begin{macrocode}
+%<*cfg&art>
+\pagestyle{empty}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\cleardoublepage}
+% 重新定义~\cs{cleardoublepage}~以取消空白页的页眉。
+%    \begin{macrocode}
+%<*cls&col>
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+  \thispagestyle{empty}%
+  \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+%
+% \subsection{目录}
+%
+%
+% \begin{macro}{\tableofcontents}
+% 设置目录格式。
+%    \begin{macrocode}
+%<*cls&col>
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \Nchapter{\contentsname}%
+    \@mkboth{\contentsname}{\contentsname}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi
+    }
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% 修改~\texttt{ctex}~宏包的缺省定义。
+%    \begin{macrocode}
+%<*cfg&col>
+\def\CTEX@contentsname{目\ORSCspace 录}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+% 去掉目录中的中文空格。
+%    \begin{macrocode}
+%<*cls&col>
+\addtocontents{toc}{\let\string\CTEX@spaceChar\relax}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% 重定义章的目录格式
+%    \begin{macrocode}
+%<*cls&col>
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 0.5ex \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak
+      \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{$\cdot$}\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\Nchapter}
+% 用于产生没有编号但在目录中列出的章。
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\Nchapter[1]{%
+  \if@mainmatter%
+    \@mainmatterfalse%
+    \chapter{#1}%
+    \@mainmattertrue%
+  \else
+    \chapter{#1}%
+  \fi}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\Npart}
+% 用于产生没有编号但在目录中列出的部分。
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\phantomref[1]{%
+ \Hy@GlobalStepCount\Hy@linkcounter
+ \xdef\@currentHref{#1*.\the\Hy@linkcounter}%
+ \Hy@raisedlink{\hyper@anchorstart{\@currentHref}\hyper@anchorend}%
+}
+\newcommand\Npart[1]{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{plain}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \phantomref{part}
+  \addcontentsline{toc}{part}{#1}
+  \@spart{#1}}
+%</cls&col>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
+%
+% \subsection{收集论文信息}
+%
+%
+% 收集论文信息
+%    \begin{macrocode}
+%<*cls&art>
+\newif\ifcollection \collectiontrue
+\gdef\collection@title{}
+\gdef\collection@titlemark{}
+\gdef\collection@author{}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.1f}{2009/09/27}{Use immediate protected write}
+%  Define immediate-protected-write based on protected-write defined in ltfiles.dtx
+%    \begin{macrocode}
+%<*cls&art>
+\long\def \immediate@protected@write#1#2#3{%
+  \begingroup
+    \let\thepage\relax
+    #2%
+    \let\protect\@unexpandable@protect
+    \edef\reserved@a{\immediate\write#1{#3}}%
+    \reserved@a
+  \endgroup
+  \if@nobreak\ifvmode\nobreak\fi\fi
+}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&art>
+\newwrite\ORSC@collection
+\immediate\openout \ORSC@collection \jobname.col
+\immediate\write\ORSC@collection{\space\string\clearpage}
+\def\collection@write#1{%
+  \immediate@protected@write\ORSC@collection
+    {\let\footnote\@gobble \let\thanks\@gobble
+     \let\label\@gobble \let\index\@gobble \let\glossary\@gobble}
+    {#1}}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2d}{2006/06/19}{去掉生成的~\texttt{.col}~文件中的多余括号}
+% \changes{v0.2g}{2007/07/12}{将~\cs{makecollection}~改为一次性命令}
+% \changes{v0.2i}{2010/08/27}{用~\cs{ORSC@writecol}~代替~\cs{makecollection}}
+% \changes{v0.2i}{2010/08/27}{Fix the bug when figure floating to the end}
+%    \begin{macrocode}
+%<*cls&art>
+\let\ORSC@enddocumenthook\@enddocumenthook
+\def\AtEndDocument{\g@addto@macro\ORSC@enddocumenthook}
+\def\@enddocumenthook{\ORSC@writecol\ORSC@enddocumenthook}
+\def\ORSC@writecol{
+  \collection@write{\space\string\AddArticle}
+  \collection@write{\space\space\space{\collection@title}}
+  \collection@write{\space\space\space{\collection@titlemark}}
+  \collection@write{\space\space\space{\collection@author}}
+  \collection@write{\space\space\space{\jobname.pdf}}
+}
+\let\makecollection\relax
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{论文标题}
+%
+%
+% 论文标题
+%    \begin{macrocode}
+%<*cls&art>
+\renewcommand*{\title}[3][\@empty]{%
+  \gdef\@title{#2\@titlenote{#3}}
+  \ifcollection
+    \gdef\collection@title{#2}
+    \gdef\collection@titlemark{#1}
+  \fi}
+\newcommand*{\@titlenote}[1]{%
+  \def\ORSC@title@footnote{#1}%
+  \ifx \ORSC@title@footnote\@empty\else
+    \footnote{#1}%
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% 作者姓名
+%    \begin{macrocode}
+%<*cls&art>
+\gdef\@author{}
+\renewcommand*{\author}[3][]{%
+  \ifx \@author\@empty
+    \gdef\@author{\@authorname{#2}\@authornote{#1}{#3}}
+  \else
+    \expandafter\gdef\expandafter\@author\expandafter
+      {\@author\and\@authorname{#2}\@authornote{#1}{#3}}
+  \fi
+  \collection@write{\space\string\index{#2}}
+  \ifcollection
+    \@authorname@swap{#2}{\ORSC@authorname}
+    \ifx \collection@author\@empty
+      \expandafter\gdef\expandafter\collection@author\expandafter{\ORSC@authorname}
+    \else
+      \expandafter\expandafter\expandafter\gdef
+      \expandafter\expandafter\expandafter\collection@author
+      \expandafter\expandafter\expandafter{%
+      \expandafter\collection@author\expandafter,\expandafter\space\ORSC@authorname}
+    \fi
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@authorname#1{\@@authorname#1,\@nil}
+\def\@@authorname#1,#2\@nil{%
+  \def\ORSC@author@name{#2}
+  \ifx \ORSC@author@name\@empty#1\else
+    \@@authorname#2\@nil\space#1\fi}
+\def\@authorname@swap#1#2{\@@authorname@swap#1,\@nil#2\@nil}
+\def\@@authorname@swap#1,#2\@nil#3\@nil{%
+  \def\ORSC@author@name{#2}
+  \ifx \ORSC@author@name\@empty
+    \gdef#3{#1}
+  \else
+    \@@authorname@swap#2\@nil#3\@nil
+    \expandafter\gdef\expandafter#3\expandafter{#3 #1}
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@authornote#1#2{%
+  \def\ORSC@author@address{#1}%
+  \def\ORSC@author@footnote{#2}%
+  \ifx \ORSC@author@address\@empty
+    \ifx \ORSC@author@footnote\@empty\else
+      \footnote{#2}%
+    \fi
+  \else
+    \textsuperscript{#1}%
+    \ifx \ORSC@author@footnote\@empty\else
+      \textsuperscript{,}%
+      \footnote{#2}%
+    \fi
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2b}{2006/06/15}{修正地址中换行时产生的对齐错误}
+% 作者地址
+%    \begin{macrocode}
+%<*cls&art>
+\gdef\@address{}
+\newcommand*{\address}[2][]{%
+  \ifx \@address\@empty
+    \gdef\@address{\@addressline{#1}{#2}}
+  \else
+    \expandafter\gdef\expandafter\@address\expandafter
+      {\@address\tabularnewline\@addressline{#1}{#2}}
+  \fi}
+%</cls&art>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*cls&art>
+\def\@addressline#1#2{\@addresscr\hb@xt@1ex{\textsuperscript{#1}\hss}#2}
+\def\@addresscr{\def\\{\tabularnewline\@addresscr\hbox to1ex{}\ignorespaces}}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% 生成论文标题
+%    \begin{macrocode}
+%<*cls&art>
+\renewcommand\maketitle{\par
+  \begingroup
+    \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+    \def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hb@xt@1.8em{%
+                \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
+    \if@twocolumn
+      \ifnum \col@number=\@ne
+        \@maketitle
+      \else
+        \twocolumn[\@maketitle]%
+      \fi
+    \else
+      \global\@topnum\z@   % Prevents figures from going at top of page.
+      \@maketitle
+    \fi
+    \thispagestyle{plain}\@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\@title\@empty
+  \global\let\@author\@empty
+  \global\let\@address\@empty
+  \global\let\@thanks\@empty
+}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2d}{2006/06/20}{去掉地址两端多余的空白}
+%    \begin{macrocode}
+%<*cls&art>
+\def\@maketitle{%
+  \begingroup\centering%
+  \let\footnote\thanks
+    {\bfseries\zihao{-2} \@title \par}%
+    \vskip 3ex%
+    {\normalfont\normalsize\zihao{-4}
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1ex%
+    {\normalfont\normalsize\kaishu\zihao{-5}
+      \begin{tabular}[t]{@{}l@{}}%
+        \@address
+      \end{tabular}\par}%
+  \endgroup}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% 中英文标题
+%    \begin{macrocode}
+%<*cls&art>
+\newenvironment{chinesetitle}
+  {\chinesematter}
+  {\global\collectionfalse\vskip 10pt}
+\newenvironment{englishtitle}
+  {\englishmatter}
+  {\global\collectionfalse\vskip 10pt}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%    \begin{macrocode}
+%<*cls&art>
+\AtBeginDocument{\null\vskip 50pt}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{摘要和关键词}
+%
+%
+% 摘要和关键词
+%    \begin{macrocode}
+%<*cls&art>
+\def\ORSC@abstract{Abstract}
+\def\ORSC@keywords{Keywords}
+\renewenvironment{abstract}
+  {\trivlist\itemindent\parindent\item\relax%
+   \zihao{-5}\noindent%
+   \textbf{\ORSC@abstract}\quad\ignorespaces}
+  {\endtrivlist}
+\newcommand*\keywords[1]{%
+  \vskip .5ex\noindent
+  \textbf{\ORSC@keywords}\quad#1\par}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{小节标题}
+%
+%
+% 小节标题靠左对齐
+%    \begin{macrocode}
+%<*cfg&art>
+%%
+%% the section formats
+%%
+\def\CTEX@section@format{\bfseries\zihao{4}}
+\def\CTEX@section@indent{\z@}
+\def\CTEX@section@beforeskip{-1.5ex \@plus -.5ex \@minus -.2ex}
+\def\CTEX@section@afterskip{.5ex \@plus .1ex}
+
+\def\CTEX@subsection@format{\bfseries\zihao{-4}}
+\def\CTEX@subsection@indent{\z@}
+\def\CTEX@subsection@beforeskip{-1.25ex \@plus -.5ex \@minus -.2ex}
+\def\CTEX@subsection@afterskip{.4ex \@plus .1ex}
+
+\def\CTEX@subsubsection@format{\bfseries\zihao{-4}}
+\def\CTEX@subsubsection@indent{\z@}
+\def\CTEX@subsubsection@beforeskip{-1ex \@plus -.5ex \@minus -.2ex}
+\def\CTEX@subsubsection@afterskip{.3ex \@plus .1ex}
+
+\def\CTEX@preparagraph{}
+\def\CTEX@postparagraph{)}
+\def\CTEX@paragraph@format{\bfseries\normalsize}
+\def\CTEX@paragraph@aftername{\hskip 1ex}
+\def\CTEX@paragraph@beforeskip{-.75ex \@plus -.25ex \@minus -.2ex}
+\def\CTEX@paragraph@afterskip{.2ex \@plus .1ex}
+
+\def\CTEX@presubparagraph{(}
+\def\CTEX@postsubparagraph{)}
+\def\CTEX@subparagraph@format{\normalfont\normalsize}
+\def\CTEX@subparagraph@aftername{\hskip 1ex}
+\def\CTEX@subparagraph@beforeskip{-.5ex \@plus -.25ex \@minus -.2ex}
+\def\CTEX@subparagraph@afterskip{.1ex \@plus .1ex}
+
+\renewcommand\theparagraph    {\@arabic\c@paragraph}
+\renewcommand\thesubparagraph {\@alph\c@subparagraph}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+% 使用五级标题。
+%    \begin{macrocode}
+%<*cls>
+\setcounter{secnumdepth}{5}
+%</cls>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{图表}
+%
+%
+% \changes{v0.1c}{2006/05/17}{增加对空白的图表标题的处理命令}
+% 用于产生空的图标标题。
+%    \begin{macrocode}
+%<*cls&art>
+\newcommand\Ncaption[2][]{%
+  \let\ORSC@caption@delimiter\CTEX@caption@delimiter
+  \def\CTEX@caption@delimiter{#1}%
+  \caption{#2}%
+  \let\CTEX@caption@delimiter\ORSC@caption@delimiter
+}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% 浮动图表必须占页面的~80\%~以上。
+%    \begin{macrocode}
+%<*cls>
+\renewcommand{\floatpagefraction}{0.80}
+%</cls>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{定理标题}
+%
+% 独立定理标题样式（标题后换行）。
+%    \begin{macrocode}
+%<*cls&art>
+\newtheoremstyle{break}% name
+  {}%      Space above, empty = `usual value'
+  {}%      Space below
+  {\itshape}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2d}{2006/06/19}{改正英文时定理类型标题仍然使用中文的错误}
+% 各种定理类型标题。
+%    \begin{macrocode}
+%<*cfg&art>
+%%
+%% the theorems definitions
+%%
+\ifORSC@english
+  \theoremstyle{plain}
+    \newtheorem{algo}{Algorithm~}
+    \newtheorem{thm}{Theorem~}
+    \newtheorem{lem}[thm]{Lemma~}
+    \newtheorem{prop}[thm]{Proposition~}
+    \newtheorem{cor}[thm]{Corollary~}
+  \theoremstyle{definition}
+    \newtheorem{defn}{Definition~}
+    \newtheorem{conj}{Conjecture~}
+    \newtheorem{exmp}{Example~}
+    \newtheorem{rem}{Remark~}
+    \newtheorem{case}{Case~}
+  \theoremstyle{break}
+    \newtheorem{bthm}[thm]{Theorem~}
+    \newtheorem{blem}[thm]{Lemma~}
+    \newtheorem{bprop}[thm]{Proposition~}
+    \newtheorem{bcor}[thm]{Corollary~}
+  \renewcommand{\proofname}{\bf Proof}
+\else
+  \theoremstyle{plain}
+    \newtheorem{algo}{算法~}
+    \newtheorem{thm}{定理~}
+    \newtheorem{lem}[thm]{引理~}
+    \newtheorem{prop}[thm]{命题~}
+    \newtheorem{cor}[thm]{推论~}
+  \theoremstyle{definition}
+    \newtheorem{defn}{定义~}
+    \newtheorem{conj}{猜想~}
+    \newtheorem{exmp}{例~}
+    \newtheorem{rem}{注~}
+    \newtheorem{case}{情形~}
+  \theoremstyle{break}
+    \newtheorem{bthm}[thm]{定理~}
+    \newtheorem{blem}[thm]{引理~}
+    \newtheorem{bprop}[thm]{命题~}
+    \newtheorem{bcor}[thm]{推论~}
+  \renewcommand{\proofname}{\bf 证明}
+\fi
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{致谢}
+%
+%
+% \changes{v0.2i}{2010/08/27}{Add Acknowledgement command}
+%    \begin{macrocode}
+%<*cls&art>
+\newcommand*\Acknowledgements{%
+  \subsection*{\ORSC@Acknowledgements}}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cfg&art>
+\def\ORSC@Acknowledgements{致谢}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{参考文献}
+%
+%
+% 参考文献需要调整行距
+% \changes{v0.2i}{2010/08/27}{Decrease the space between and the font size of bibitems}
+%    \begin{macrocode}
+%<*cls&art>
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \vskip 6\p@
+      \itemsep 2\p@ \@plus\p@ \@minus\p@
+      \small
+      \def\baselinestretch{1}\selectfont
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+%</cls&art>
+%    \end{macrocode}
+%
+%
+% 使用~\BibTeX{}~时使用的参考文献样式。
+%    \begin{macrocode}
+%<*cfg&art>
+\bibliographystyle{plain}
+%</cfg&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{附录}
+%
+%
+% \changes{v0.2d}{2006/06/22}{增加对附录格式的设置}
+%    \begin{macrocode}
+%<*cls&art>
+\let\ORSC@save@appendix\appendix
+\renewcommand*\appendix{\ORSC@save@appendix%
+  \numberwithin{equation}{section}
+  \numberwithin{algo}{section}
+  \numberwithin{thm}{section}
+  \numberwithin{defn}{section}
+  \numberwithin{conj}{section}
+  \numberwithin{exmp}{section}
+  \numberwithin{rem}{section}
+  \numberwithin{case}{section}
+}%
+%</cls&art>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{集成PDF}
+%
+%
+% \changes{v0.2c}{2006/06/15}{改变~\cs{AddArticle}~命令的参数顺序}
+% \changes{v0.2j}{2010/10/18}{Automatically determine the page number of pdf file}
+% 集成~PDF~文件
+%    \begin{macrocode}
+%<*cls&col>
+%% \AddArticle{title}{short title}{author}{pdffile}
+\newcommand{\AddArticle}[4]{%
+  \ORSC@checkpdffile{#4}%
+  \ORSC@getpagecount{\ORSC@pdffile}%
+  \includepdf[pages={1},pagecommand={\ORSC@firstpagecommand{#1}{#3}{\ORSC@pdffile}}]{\ORSC@pdffile}%
+  \ifnum\ORSC@pagecount>1
+    \includepdf[pages={2-\ORSC@pagecount},pagecommand={\ORSC@secondpagecommand{#1}{#2}{\ORSC@pdffile}}]{\ORSC@pdffile}%
+  \fi\AddHTMLtoc{#1}{#3}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2i}{2010/08/27}{Add AddPages command to insert any pages from pdf}
+%    \begin{macrocode}
+%<*cls&col>
+%% \AddPages{short title}{pages}{pdffile}
+\newcommand{\AddPages}[3]{%
+  \ORSC@checkpdffile{#3}%
+  \includepdf[pages={#2},pagecommand={\LNOR@secondpagecommand{#1}{#1}{\ORSC@pdffile}}]{\ORSC@pdffile}%
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2k}{2010/10/18}{Check if pdf file exists}
+%    \begin{macrocode}
+%<*cls&col>
+\def\ORSC@checkpdffile#1{%
+  \let\ORSC@pdffile\relax
+  \IfFileExists{#1.pdf}{\edef\ORSC@pdffile{#1.pdf}}{%
+    \IfFileExists{#1}{\edef\ORSC@pdffile{#1}}{%
+      \PackageError{ORSC}{Cannot find file `#1'}{}}}
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2h}{2007/07/27}{增加生成~HTML toc~的功能}
+%    \begin{macrocode}
+%<*cls&col>
+\newwrite\ORSC@htmltoc
+\immediate\openout \ORSC@htmltoc \jobname.htm
+\def\htmltoc@write#1{%
+  \protected@write\ORSC@htmltoc
+    {\let\footnote\@gobble \let\thanks\@gobble
+     \let\label\@gobble \let\index\@gobble \let\glossary\@gobble}
+    {#1}}
+\newcounter{ORSC@papernum}
+\setcounter{ORSC@papernum}{0}
+\def\papernum{%
+  \ifnum\c@ORSC@papernum<100 0\fi
+  \ifnum\c@ORSC@papernum<10  0\fi
+  \theORSC@papernum}
+\newcommand{\ORSC@addHTMLtoc}[3]{%
+  \addtocounter{ORSC@papernum}{1}
+  \htmltoc@write{<p><b><a href="#1\papernum.pdf">#2</a></b><br>#3</p>}
+}
+\newcommand{\AddHTMLtoc}[2]{%
+  \ORSC@addHTMLtoc{ORSC}{#1}{#2}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% \changes{v0.2i}{2010/08/27}{Debug mode: show pdf file name in the right side}
+%    \begin{macrocode}
+%<*cls&col>
+\def\ORSC@firstpagecommand#1#2#3{%
+  \phantomref{chapter}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \addtocontents{toc}{{\it #2}\par}%
+  \thispagestyle{plain}%
+  \ORSC@showpubinfo%
+  \ifORSC@debug
+    \begingroup
+      \hskip\textwidth
+      \Huge\bf\noindent
+      \ORSC@escape{#3}
+    \endgroup
+  \fi
+}
+\def\ORSC@secondpagecommand#1#2#3{%
+  \fancyhead[LO]{\if!#2! #1 \else #2 \fi}
+  \ifORSC@debug
+    \begingroup
+      \hskip\textwidth
+      \Huge\bf\noindent
+      \ORSC@escape{#3}
+    \endgroup
+  \fi
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&col>
+\def\ORSC@escape@underscore#1_#2\@nil{#1\if!#2! \else\_\ORSC@escape@underscore#2\@nil\fi}
+\def\ORSC@escape#1{%
+  \ORSC@escape@underscore#1_\@nil}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% 获得每篇论文的结束页码
+%    \begin{macrocode}
+%<*cls&col>
+\newcount\ORSC@pagecount
+\def\ORSC@getpagecount#1{
+  \pdfximage{#1}%
+  \edef\ORSC@pagecount{\the\pdflastximagepages}}
+\newcount\ORSC@lastpage
+\def\lastpage{\the\ORSC@lastpage}
+\def\ORSC@getlastpage{%
+  \ORSC@lastpage\c@page\relax%
+  \advance\ORSC@lastpage \ORSC@pagecount\relax%
+  \advance\ORSC@lastpage -1\relax}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% 在论文首页显示版权信息
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand\ORSC@showpubinfo{%
+  \ORSC@getlastpage%
+  \begingroup\noindent
+  \def\baselinestretch{1}\zihao{6}
+  \ORSC@pubinfo\par\endgroup}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+% 版权信息
+%    \begin{macrocode}
+%<*cfg&col>
+\def\ORSC@pubinfo{%
+  中国运筹学会第八届学术交流会论文集\\
+  广东深圳，~2006~年~6~月~30~日~--~7~月~2~日\\
+  版权所有~\copyright{} 2006 ORSC，第~\thepage--\lastpage~页}
+%</cfg&col>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%<*cls&col>
+\newcommand*\PubInfo[1]{\def\ORSC@pubinfo{#1}}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{作者索引}
+%
+%    \begin{macrocode}
+%<*cls&col>
+\makeindex
+\newcommand\AuthorIndex{%
+  \clearpage
+  \phantomref{part}
+  \addcontentsline{toc}{part}{\indexname}
+  \fancyhead[LO]{\indexname}
+  \printindex
+}
+%</cls&col>
+%    \end{macrocode}
+%
+%
+%
+%
+% \Finale
+%
+% \setcounter{IndexColumns}{2}
+% \IndexPrologue{\section*{索引} {\it 意大利体的数字表示描述对应索引项的页码；
+%                带下划线的数字表示定义对应索引项的代码行号；
+%                罗马字体的数字表示使用对应索引项的代码行号。}}
+%
+% \GlossaryPrologue{\section*{版本更新}}
+%
+% \PrintIndex \PrintChanges
+\endinput
