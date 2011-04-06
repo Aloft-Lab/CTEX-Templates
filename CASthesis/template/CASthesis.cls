@@ -50,7 +50,7 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{CASthesis}
-  [2009/09/15 v0.1j CASthesis
+  [2011/04/06 v0.2 CASthesis
    document class]
 \newif\ifCAST@typeinfo \CAST@typeinfotrue
 \DeclareOption{notypeinfo}{\CAST@typeinfofalse}
@@ -62,7 +62,7 @@
 \ProcessOptions
 \LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 %% check pdfTeX mode
-\RequirePackage{ifpdf}
+\RequirePackage{ifpdf,ifxetex}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
@@ -70,18 +70,23 @@
 %% sort and compress citations
 \RequirePackage[sort&compress,numbers]{natbib}
 %% packages and settings depend on PDF mode
-\ifpdf   % We're running pdfTeX in PDF mode
-  \RequirePackage[pdftex]{hyperref}
-  \DeclareGraphicsExtensions{.pdf}
-\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
-  \ifCAST@dvips
-    \RequirePackage[dvips]{hyperref}
-    \RequirePackage{psfrag}
-    \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
-  \else
-    \RequirePackage[dvipdfm]{hyperref}
+\ifxetex
+  \RequirePackage[xetex]{hyperref}
+  \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\else
+  \ifpdf   % We're running pdfTeX in PDF mode
+    \RequirePackage[pdftex]{hyperref}
+    \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+  \else    % We're not running pdfTeX, or running pdfTeX in DVI mode
+    \ifCAST@dvips
+      \RequirePackage[dvips]{hyperref}
+      \RequirePackage{psfrag}
+      \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
+    \else
+      \RequirePackage[dvipdfm]{hyperref}
+    \fi
+    \DeclareGraphicsExtensions{.eps,.ps}
   \fi
-  \DeclareGraphicsExtensions{.eps,.ps}
 \fi
 \hypersetup{CJKbookmarks,%
        bookmarksnumbered,%

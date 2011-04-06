@@ -33,7 +33,7 @@
 %%   Right brace   \}     Tilde         \~}
 %%
 %
-% \CheckSum{900}
+% \CheckSum{908}
 %
 % \iffalse meta-comment
 %</!(cfg|fd)>
@@ -45,7 +45,7 @@
 %<cls>\NeedsTeXFormat{LaTeX2e}[1995/12/01]
 %<cls>\ProvidesClass{CASthesis}
 %<cfg>\ProvidesFile{CASthesis.cfg}
-  [2009/09/15 v0.1j CASthesis
+  [2011/04/06 v0.2 CASthesis
 %<cls>   document class]
 %<cfg>   configuration file]
 %
@@ -221,10 +221,11 @@
 % \changes{v0.1h}{2007/01/09}{使用~ifpdf~宏包来判断是否使用~pdfTeX~直接生成~PDF~文件}
 % \changes{v0.1i}{2009/05/13}{使用~pdfTeX~时不加入~psfrag~宏包}
 % \changes{v0.1j}{2009/09/15}{加入~natbib~宏包来压缩排序引用}
+% \changes{v0.2}{2011/04/06}{加入对~XeTeX~的支持}
 %    \begin{macrocode}
 %<*cls>
 %% check pdfTeX mode
-\RequirePackage{ifpdf}
+\RequirePackage{ifpdf,ifxetex}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
@@ -232,18 +233,23 @@
 %% sort and compress citations
 \RequirePackage[sort&compress,numbers]{natbib}
 %% packages and settings depend on PDF mode
-\ifpdf   % We're running pdfTeX in PDF mode
-  \RequirePackage[pdftex]{hyperref}
-  \DeclareGraphicsExtensions{.pdf}
-\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
-  \ifCAST@dvips
-    \RequirePackage[dvips]{hyperref}
-    \RequirePackage{psfrag}
-    \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
-  \else
-    \RequirePackage[dvipdfm]{hyperref}
+\ifxetex
+  \RequirePackage[xetex]{hyperref}
+  \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\else
+  \ifpdf   % We're running pdfTeX in PDF mode
+    \RequirePackage[pdftex]{hyperref}
+    \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+  \else    % We're not running pdfTeX, or running pdfTeX in DVI mode
+    \ifCAST@dvips
+      \RequirePackage[dvips]{hyperref}
+      \RequirePackage{psfrag}
+      \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
+    \else
+      \RequirePackage[dvipdfm]{hyperref}
+    \fi
+    \DeclareGraphicsExtensions{.eps,.ps}
   \fi
-  \DeclareGraphicsExtensions{.eps,.ps}
 \fi
 %</cls>
 %    \end{macrocode}
@@ -269,6 +275,15 @@
 %<*cls>
 \AtEndOfPackage{\makeatletter\input{CASthesis.cfg}\makeatother}
 %</cls>
+%    \end{macrocode}
+%
+% \changes{v0.2}{2011/04/06}{为~CASthesis.cfg~文件设置正确的编码信息}
+%    \begin{macrocode}
+%<*cfg>
+\ifxetex
+  \XeTeXinputencoding "GBK"
+\fi
+%</cfg>
 %    \end{macrocode}
 %
 %
