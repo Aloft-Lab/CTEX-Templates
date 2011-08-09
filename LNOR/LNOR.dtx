@@ -33,7 +33,7 @@
 %%   Right brace   \}     Tilde         \~}
 %%
 %
-% \CheckSum{1081}
+% \CheckSum{1089}
 %
 % \iffalse meta-comment
 %</!(cfg|fd)>
@@ -47,7 +47,7 @@
 %<cls&col>\ProvidesClass{LNORcol}
 %<cfg&art>\ProvidesFile{LNOR.cfg}
 %<cfg&col>\ProvidesFile{LNORcol.cfg}
-  [2011/07/26 v0.1l LNOR
+  [2011/08/09 v0.1m LNOR
 %<cls&art>   article document class]
 %<cls&col>   collection document class]
 %<cfg>   configuration file]
@@ -1023,28 +1023,34 @@
 %
 % \changes{v0.1c}{2009/08/12}{Fix the bug in calling AddHTMLtoc}
 % \changes{v0.1j}{2010/10/18}{Automatically determine the page number of pdf file}
+% \changes{v0.1m}{2011/08/09}{Add AddArticleL command to integrage PDF in letter page size}
 %    \begin{macrocode}
 %<*cls&col>
-%% \AddArticle{title}{short title}{author}{pdffile}
-\newcommand{\AddArticle}[4]{%
-  \LNOR@checkpdffile#4.pdf\@nil%
+%% \AddArticle[pdfpages options]{title}{short title}{author}{pdffile}
+\newcommand{\AddArticle}[5][noautoscale]{%
+  \LNOR@checkpdffile#5.pdf\@nil%
   \LNOR@getpagecount{\LNOR@pdffile}%
-  \includepdf[pages={1},pagecommand={\LNOR@firstpagecommand{#1}{#3}{#4}}]{\LNOR@pdffile}%
+  \includepdf[pages={1},pagecommand={\LNOR@firstpagecommand{#2}{#4}{#5}},#1]{\LNOR@pdffile}%
   \ifnum\LNOR@pagecount>1
-    \includepdf[pages={2-\LNOR@pagecount},pagecommand={\LNOR@secondpagecommand{#1}{#2}{#4}}]{\LNOR@pdffile}%
-  \fi\AddHTMLtoc{#1}{#3}}
+    \includepdf[pages={2-\LNOR@pagecount},pagecommand={\LNOR@secondpagecommand{#2}{#3}{#5}},#1]{\LNOR@pdffile}%
+  \fi\AddHTMLtoc{#2}{#4}}
+\newcommand{\AddArticleL}[5][]{%
+  \AddArticle[noautoscale,offset=0 0.35in,#1]{#2}{#3}{#4}{#5}}
 %</cls&col>
 %    \end{macrocode}
 %
 %
 % \changes{v0.1f}{2009/09/27}{Add AddPages command to insert any pages from pdf}
+% \changes{v0.1m}{2011/08/09}{Add AddPagesL command to integrage PDF in letter page size}
 %    \begin{macrocode}
 %<*cls&col>
-%% \AddPages{short title}{pages}{pdffile}
-\newcommand{\AddPages}[3]{%
-  \LNOR@checkpdffile#3.pdf\@nil%
-  \includepdf[pages={#2},pagecommand={\LNOR@secondpagecommand{#1}{#1}{#3}}]{\LNOR@pdffile}%
+%% \AddPages[pdfpages options]{short title}{pages}{pdffile}
+\newcommand{\AddPages}[4][noautoscale]{%
+  \LNOR@checkpdffile#4.pdf\@nil%
+  \includepdf[pages={#3},pagecommand={\LNOR@secondpagecommand{#2}{#2}{#4}},#1]{\LNOR@pdffile}%
 }
+\newcommand{\AddPagesL}[4][]{%
+  \AddPages[noautoscale,offset=0 0.35in,#1]{#2}{#3}{#4}}
 %</cls&col>
 %    \end{macrocode}
 %
@@ -1109,7 +1115,7 @@
   \fi
 }
 \def\LNOR@secondpagecommand#1#2#3{%
-  \fancyhead[LO]{\if!#2! #1 \else #2 \fi}
+  \gdef\leftmark{\if!#2! #1 \else #2 \fi}
   \ifLNOR@debug
     \begingroup
       \vspace*{-80\p@}
@@ -1180,7 +1186,7 @@
   \clearpage
   \phantomref{part}
   \addcontentsline{toc}{part}{\indexname}
-  \fancyhead[LO]{\indexname}
+  \gdef\leftmark{\indexname}
   \printindex
 }
 %</cls&col>
