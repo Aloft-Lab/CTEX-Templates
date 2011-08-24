@@ -33,7 +33,7 @@
 %%   Right brace   \}     Tilde         \~}
 %%
 %
-% \CheckSum{1089}
+% \CheckSum{1097}
 %
 % \iffalse meta-comment
 %</!(cfg|fd)>
@@ -47,7 +47,7 @@
 %<cls&col>\ProvidesClass{LNORcol}
 %<cfg&art>\ProvidesFile{LNOR.cfg}
 %<cfg&col>\ProvidesFile{LNORcol.cfg}
-  [2011/08/09 v0.1m LNOR
+  [2011/08/24 v0.1n LNOR
 %<cls&art>   article document class]
 %<cls&col>   collection document class]
 %<cfg>   configuration file]
@@ -295,6 +295,7 @@
 %
 %
 % \changes{v0.1h}{2010/07/30}{Add epstopdf package}
+% \changes{v0.1n}{2011/08/24}{Print mode will not use hyperref}
 %    \begin{macrocode}
 %<*cls&art>
 %% math packages
@@ -303,13 +304,15 @@
 \RequirePackage{graphicx,epstopdf}
 %% other packages
 %% hyperref package
-\ifpdf   % We're running pdfTeX in PDF mode
-  \RequirePackage[pdftex]{hyperref}
-\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
-  \ifLNOR@dvips
-    \RequirePackage[dvips]{hyperref}
-  \else
-    \RequirePackage[dvipdfm]{hyperref}
+\ifLNOR@print\else
+  \ifpdf   % We're running pdfTeX in PDF mode
+    \RequirePackage[pdftex]{hyperref}
+  \else    % We're not running pdfTeX, or running pdfTeX in DVI mode
+    \ifLNOR@dvips
+      \RequirePackage[dvips]{hyperref}
+    \else
+      \RequirePackage[dvipdfm]{hyperref}
+    \fi
   \fi
 \fi
 %</cls&art>
@@ -317,18 +320,24 @@
 %
 %
 % \changes{v0.1g}{2009/09/27}{Set pdf minor version as 5}
+% \changes{v0.1n}{2011/08/24}{Use watermark package to show debug info}
 %    \begin{macrocode}
 %<*cls&col>
+\ifLNOR@debug
+  \RequirePackage{watermark}
+\fi
 \RequirePackage{makeidx}
-\pdfminorversion=5
 \ifpdf\else % We're not running pdftex
   \PackageError{LNORcol}{%
             You are not using pdfLaTeX.\MessageBreak
             Package LNORcol does not work with other TeX implementations}{%
             Please, change to pdfLaTeX to use this package!}%
 \fi
+\pdfminorversion=5
 \RequirePackage{pdfpages}
-\RequirePackage[pdftex]{hyperref}
+\ifLNOR@print\else
+  \RequirePackage[pdftex]{hyperref}
+\fi
 %</cls&col>
 %    \end{macrocode}
 %
@@ -336,15 +345,14 @@
 % Set hyperref package.
 %    \begin{macrocode}
 %<*cls>
-\hypersetup{CJKbookmarks,%
+\ifLNOR@print\else
+  \hypersetup{CJKbookmarks,%
        bookmarksnumbered,%
               colorlinks,%
                linkcolor=blue,%
                citecolor=blue,%
               plainpages=false,%
             pdfstartview=FitH}
-\ifLNOR@print
-  \hypersetup{colorlinks=false}
 \fi
 %</cls>
 %    \end{macrocode}
@@ -560,10 +568,11 @@
 %    \begin{macrocode}
 %<*cls&col>
 \newcommand\phantomref[1]{%
- \Hy@GlobalStepCount\Hy@linkcounter
- \xdef\@currentHref{#1*.\the\Hy@linkcounter}%
- \Hy@raisedlink{\hyper@anchorstart{\@currentHref}\hyper@anchorend}%
-}
+  \ifLNOR@print\else
+    \Hy@GlobalStepCount\Hy@linkcounter
+    \xdef\@currentHref{#1*.\the\Hy@linkcounter}%
+    \Hy@raisedlink{\hyper@anchorstart{\@currentHref}\hyper@anchorend}%
+  \fi}
 \newcommand\Npart[1]{%
   \if@openright
     \cleardoublepage
@@ -1107,21 +1116,13 @@
   \thispagestyle{plain}%
   \LNOR@showpubinfo%
   \ifLNOR@debug
-    \begingroup
-      \vspace*{-100\p@}
-      \Huge\bf\noindent
-      \detokenize{#3}
-    \endgroup
+    \watermark{\Huge\bf\raise 1.em\hbox{\detokenize{#3}}}
   \fi
 }
 \def\LNOR@secondpagecommand#1#2#3{%
   \gdef\leftmark{\if!#2! #1 \else #2 \fi}
   \ifLNOR@debug
-    \begingroup
-      \vspace*{-80\p@}
-      \Huge\bf\noindent
-      \detokenize{#3}
-    \endgroup
+    \watermark{\Huge\bf\raise 1.em\hbox{\detokenize{#3}}}
   \fi
 }
 %</cls&col>
