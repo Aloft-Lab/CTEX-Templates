@@ -79,7 +79,7 @@
     \RequirePackage{psfrag}
     \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
   \else
-    \RequirePackage[dvipdfm]{hyperref}
+    \RequirePackage{hyperref}
   \fi
   \DeclareGraphicsExtensions{.eps,.ps}
 \fi

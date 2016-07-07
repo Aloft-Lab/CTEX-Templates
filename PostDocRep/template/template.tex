@@ -6,26 +6,26 @@
 %% $Id: template.tex 430 2009-05-13 06:20:12Z aloft $
 
 
-\documentclass[dvipdfm]{PostDocRep}
-% ¿ÉÑ¡²ÎÊı£º
-% notypeinfo È¡ÏûìéÒ³µÄLaTeX°æ±¾ĞÅÏ¢
+\documentclass{PostDocRep}
+% å¯é€‰å‚æ•°ï¼š
+% notypeinfo å–æ¶ˆæ‰‰é¡µçš„LaTeXç‰ˆæœ¬ä¿¡æ¯
 %
-% ÏÂÃæÈı¸öÑ¡Ò»¸ö£º
-% dvipdfm Ê¹ÓÃ dvipdfm(x) Éú³É×îÖÕµÄ PDF ÎÄµµ (È±Ê¡ÉèÖÃ£©
-% dvips Ê¹ÓÃ dvips Éú³É×îÖÕµÄ PS ÎÄµµ
-% pdftex Ê¹ÓÃ pdfLaTeX Éú³É×îÖÕµÄ PDF ÎÄµµ
+% ä¸‹é¢ä¸‰ä¸ªé€‰ä¸€ä¸ªï¼š
+% dvipdfm ä½¿ç”¨ dvipdfm(x) ç”Ÿæˆæœ€ç»ˆçš„ PDF æ–‡æ¡£ (ç¼ºçœè®¾ç½®ï¼‰
+% dvips ä½¿ç”¨ dvips ç”Ÿæˆæœ€ç»ˆçš„ PS æ–‡æ¡£
+% pdftex ä½¿ç”¨ pdfLaTeX ç”Ÿæˆæœ€ç»ˆçš„ PDF æ–‡æ¡£
 
 
-% ÉèÖÃÍ¼ĞÎÎÄ¼şµÄËÑË÷Â·¾¶
+% è®¾ç½®å›¾å½¢æ–‡ä»¶çš„æœç´¢è·¯å¾„
 \graphicspath{{chapter/}{figures/}}
 
-% È¡ÏûÁ´½ÓµÄÑÕÉ«
+% å–æ¶ˆé“¾æ¥çš„é¢œè‰²
 %\hypersetup{colorlinks=false}
 
-% ĞŞ¸ÄÕÂµÄ±êÌâÎªÓ¢ÎÄ¸ñÊ½
+% ä¿®æ”¹ç« çš„æ ‡é¢˜ä¸ºè‹±æ–‡æ ¼å¼
 %\CTEXsetup[name={Chapter~,}, number={\arabic{chapter}}]{chapter}
 
-% Ğ¡½Ú±êÌâ¿¿×ó¶ÔÆë
+% å°èŠ‚æ ‡é¢˜é å·¦å¯¹é½
 %\CTEXsetup[format+={\flushleft}]{section}
 
 
@@ -33,52 +33,52 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ·âÃæ²¿·Ö
+%% å°é¢éƒ¨åˆ†
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  % ÖĞÎÄ·âÃæÄÚÈİ
+  % ä¸­æ–‡å°é¢å†…å®¹
   \classification{}
   \confidential{}
   \UDC{}
   \serialnumber{}
-  \school{ÖĞ¹ú¿ÆÑ§Ôº}
-  \title{²©Ê¿ºóÑĞ¾¿±¨¸æ~\LaTeX{}~Ä£°å}
-  \author{ÎâÁèÔÆ}
-  \workdate{2003Äê9ÔÂ}{2005Äê6ÔÂ}
-  \submitdate{2005Äê6ÔÂ}
-  \address{ÖĞ¹ú¿ÆÑ§Ôº£¨±±¾©£©}
+  \school{ä¸­å›½ç§‘å­¦é™¢}
+  \title{åšå£«åç ”ç©¶æŠ¥å‘Š~\LaTeX{}~æ¨¡æ¿}
+  \author{å´å‡Œäº‘}
+  \workdate{2003å¹´9æœˆ}{2005å¹´6æœˆ}
+  \submitdate{2005å¹´6æœˆ}
+  \address{ä¸­å›½ç§‘å­¦é™¢ï¼ˆåŒ—äº¬ï¼‰}
   \englishtitle{\LaTeX{} Template of Postdoctoral Research Report}
-  \major{ÊıÑ§}
-  \submajor{ÔË³ïÑ§}
-  \institute{ÖĞ¹ú¿ÆÑ§ÔºÊıÑ§ÓëÏµÍ³¿ÆÑ§ÑĞ¾¿Ôº}
+  \major{æ•°å­¦}
+  \submajor{è¿ç­¹å­¦}
+  \institute{ä¸­å›½ç§‘å­¦é™¢æ•°å­¦ä¸ç³»ç»Ÿç§‘å­¦ç ”ç©¶é™¢}
 
-  %¿ÉÑ¡ÄÚÈİ£º×«Ğ´¹æÔòÖĞ²»×÷ÒªÇóµÄÄÚÈİ£¬Ò»°ã²»ĞèÒª¡£
+  %å¯é€‰å†…å®¹ï¼šæ’°å†™è§„åˆ™ä¸­ä¸ä½œè¦æ±‚çš„å†…å®¹ï¼Œä¸€èˆ¬ä¸éœ€è¦ã€‚
 
-  %Èç¹ûÒªÔÚ·âÃæÏÔÊ¾ºÏ×÷µ¼Ê¦£¬È¥µôÏÂĞĞµÄ×¢ÊÍ·û¼´¿É¡£
-  %\advisor{XXX~ÑĞ¾¿Ô±}
+  %å¦‚æœè¦åœ¨å°é¢æ˜¾ç¤ºåˆä½œå¯¼å¸ˆï¼Œå»æ‰ä¸‹è¡Œçš„æ³¨é‡Šç¬¦å³å¯ã€‚
+  %\advisor{XXX~ç ”ç©¶å‘˜}
 
-  % ·âÃæ¡¢ÌâÃûÒ³
+  % å°é¢ã€é¢˜åé¡µ
   \maketitle
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ç°ÑÔ²¿·Ö
+%% å‰è¨€éƒ¨åˆ†
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
 
-  % ÕªÒª
+  % æ‘˜è¦
   \include{chapter/abstract}
 
-  % Ä¿Â¼
+  % ç›®å½•
   \tableofcontents
-  % ±í¸ñÄ¿Â¼
+  % è¡¨æ ¼ç›®å½•
   \listoftables
-  % ²åÍ¼Ä¿Â¼
+  % æ’å›¾ç›®å½•
   \listoffigures
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ÕıÎÄ²¿·Ö
+%% æ­£æ–‡éƒ¨åˆ†
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 
@@ -87,31 +87,31 @@
   \include{chapter/chap-tabfig}
 
 
-  % ÖÂĞ»
+  % è‡´è°¢
   \include{chapter/thanks}
 
-  % ²Î¿¼ÎÄÏ×
-  % Ê¹ÓÃ BibTeX
+  % å‚è€ƒæ–‡çŒ®
+  % ä½¿ç”¨ BibTeX
   \bibliography{bib/tex}
   \nocite{*}
-  % ²»Ê¹ÓÃ BibTeX
+  % ä¸ä½¿ç”¨ BibTeX
   % \include{chapter/bib}
 
-  % ¸½Â¼
+  % é™„å½•
   \appendix
 
   \include{chapter/chap-req}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ¸½¼ş²¿·Ö
+%% é™„ä»¶éƒ¨åˆ†
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
 
-  % ¸öÈË¼òÀú
+  % ä¸ªäººç®€å†
   \include{chapter/resume}
 
-  % ·¢±íÎÄÕÂÄ¿Â¼
+  % å‘è¡¨æ–‡ç« ç›®å½•
   \include{chapter/pub}
 
 
