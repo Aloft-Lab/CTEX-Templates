@@ -1,0 +1,11 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*.fls
+*.lof
+*.gz
+*.out
+*.lot
+template.pdf
+*.toc

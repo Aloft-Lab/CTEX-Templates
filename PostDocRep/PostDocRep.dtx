@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright 2005-2006
+% Copyright 2005-2022
 % CTEX.ORG and any individual authors listed elsewhere in this file.
 %
 % This file is part of the PostDocRep package project.
@@ -45,7 +45,7 @@
 %<cls>\NeedsTeXFormat{LaTeX2e}[1995/12/01]
 %<cls>\ProvidesClass{PostDocRep}
 %<cfg>\ProvidesFile{PostDocRep.cfg}
-  [2009/09/23 v0.1e PostDocRep
+  [2022/04/20 v0.1f PostDocRep
 %<cls>   document class]
 %<cfg>   configuration file]
 %
@@ -119,43 +119,43 @@
 % \makeatother
 %
 %
-% \title{\bf \PostDocRep~ºê°üËµÃ÷\thanks
-%   {±¾ÎÄ¼ş°æ±¾ºÅÎª~\fileversion{}£¬×îºóĞŞ¸ÄÈÕÆÚ~\filedate{}¡£}}
-% \author{\it ÎâÁèÔÆ\thanks{aloft@ctex.org}}
-% \date{\small ´òÓ¡ÈÕÆÚ£º~\today}
+% \title{\bf \PostDocRep~å®åŒ…è¯´æ˜\thanks
+%   {æœ¬æ–‡ä»¶ç‰ˆæœ¬å·ä¸º~\fileversion{}ï¼Œæœ€åä¿®æ”¹æ—¥æœŸ~\filedate{}ã€‚}}
+% \author{\it å´å‡Œäº‘\thanks{aloft@ctex.org}}
+% \date{\small æ‰“å°æ—¥æœŸï¼š~\today}
 % \maketitle
 %
 %
 % \begin{abstract}
-% \PostDocRep~ºê°üÌá¹©ÁËÒ»¸ö²©Ê¿ºóÑĞ¾¿±¨¸æµÄ~\LaTeX{}~ÎÄµµÀà£¬
-% µ×²ãÍ¨¹ı~\ctex~ºê°üÖ§³Ö~CCT~ºÍ~CJK~Á½ÖÖÖĞÎÄ~\LaTeX{}~ÏµÍ³¡£
+% \PostDocRep~å®åŒ…æä¾›äº†ä¸€ä¸ªåšå£«åç ”ç©¶æŠ¥å‘Šçš„~\LaTeX{}~æ–‡æ¡£ç±»ï¼Œ
+% åº•å±‚é€šè¿‡~\ctex~å®åŒ…æ”¯æŒ~CCT~å’Œ~CJK~ä¸¤ç§ä¸­æ–‡~\LaTeX{}~ç³»ç»Ÿã€‚
 %
-% \PostDocRep~ºê°üĞèÒª~\ctex~ºê°üÒÔ¼°~CCT~ÏµÍ³»òÕß~CJK~ºê°üµÄÖ§³Ö¡£
-% Ö÷ÒªÎÄ¼ş°üÀ¨~\texttt{PostDocRep.cls}~ÎÄµµÀàºÍÅäÖÃÎÄ¼ş~\texttt{PostDocRep.cfg}¡£
+% \PostDocRep~å®åŒ…éœ€è¦~\ctex~å®åŒ…ä»¥åŠ~CCT~ç³»ç»Ÿæˆ–è€…~CJK~å®åŒ…çš„æ”¯æŒã€‚
+% ä¸»è¦æ–‡ä»¶åŒ…æ‹¬~\texttt{PostDocRep.cls}~æ–‡æ¡£ç±»å’Œé…ç½®æ–‡ä»¶~\texttt{PostDocRep.cfg}ã€‚
 %
-% \PostDocRep~ºê°üÓÉ~\ctexorg{}~ÖÆ×÷²¢¸ºÔğÎ¬»¤¡£
+% \PostDocRep~å®åŒ…ç”±~\ctexorg{}~åˆ¶ä½œå¹¶è´Ÿè´£ç»´æŠ¤ã€‚
 % \end{abstract}
 %
 %
 % \tableofcontents
 %
 %
-% \section{¼ò½é}
+% \section{ç®€ä»‹}
 %
 % TODO
 %
 %
-% \section{Ê¹ÓÃ°ïÖú}
+% \section{ä½¿ç”¨å¸®åŠ©}
 %
 % TODO
 %
 %
-% \subsection{Ñ¡Ïî}
+% \subsection{é€‰é¡¹}
 %
 % TODO
 %
 %
-% \subsection{»ù±¾ÃüÁî}
+% \subsection{åŸºæœ¬å‘½ä»¤}
 %
 % TODO
 %
@@ -168,15 +168,15 @@
 %
 %
 %
-% \section{Ô´´úÂëËµÃ÷}
+% \section{æºä»£ç è¯´æ˜}
 %
 %
 %
 %
-% \subsection{Ñ¡Ïî}
+% \subsection{é€‰é¡¹}
 %
 %
-% ÊÇ·ñÔÚ·âÃæµÄ±³Ãæ´òÓ¡ºê°üµÄĞÅÏ¢¡£
+% æ˜¯å¦åœ¨å°é¢çš„èƒŒé¢æ‰“å°å®åŒ…çš„ä¿¡æ¯ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newif\ifPDR@typeinfo \PDR@typeinfotrue
@@ -185,45 +185,49 @@
 %    \end{macrocode}
 %
 %
-% \changes{v0.1d}{2009/05/13}{¼ÓÈë~pdftex~Ñ¡Ïî}
-% Ê¹ÓÃ~dvips~»¹ÊÇ~dvipdfm~À´´¦Àí~DVI~ÎÄ¼ş¡£
+% \changes{v0.1d}{2009/05/13}{åŠ å…¥~pdftex~é€‰é¡¹}
+% \changes{v0.1f}{2022/04/20}{åŠ å…¥~xetex~é€‰é¡¹}
+% ä½¿ç”¨~dvips~è¿˜æ˜¯~dvipdfm~æ¥å¤„ç†~DVI~æ–‡ä»¶ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newif\ifPDR@dvips \PDR@dvipsfalse
-\DeclareOption{dvips}{\PDR@dvipstrue}
-\DeclareOption{dvipdfm}{\PDR@dvipsfalse}
-\DeclareOption{pdftex}{\PDR@dvipsfalse}
+\newif\ifPDR@dvipdfm \PDR@dvipdfmfalse
+\DeclareOption{dvips}{\PDR@dvipstrue\PDR@dvipdfmfalse}
+\DeclareOption{dvipdfm}{\PDR@dvipsfalse\PDR@dvipdfmtrue}
+\DeclareOption{pdftex}{\PDR@dvipsfalse\PDR@dvipdfmfalse}
+\DeclareOption{xetex}{\PDR@dvipsfalse\PDR@dvipdfmfalse}
 %</cls>
 %    \end{macrocode}
 %
 %
-% °ÑÃ»ÓĞ¶¨ÒåµÄÑ¡Ïî´«µİ¸øµ×²ãµÄÎÄµµÀà
+% æŠŠæ²¡æœ‰å®šä¹‰çš„é€‰é¡¹ä¼ é€’ç»™åº•å±‚çš„æ–‡æ¡£ç±»
 %    \begin{macrocode}
 %<cls>\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 %    \end{macrocode}
 %
 %
-% ´¦ÀíÑ¡Ïî
+% å¤„ç†é€‰é¡¹
 %    \begin{macrocode}
 %<cls>\ProcessOptions
 %    \end{macrocode}
 %
 %
-% ×°ÈëÈ±Ê¡µÄÎÄµµÀà
-% \changes{v0.1a}{2005/12/09}{Ê¹ÓÃ~v0.7~ÒÔÉÏ°æ±¾µÄ~ctex~ºê°üÌá¹©µÄ~fntef~Ñ¡Ïî}
+% è£…å…¥ç¼ºçœçš„æ–‡æ¡£ç±»
+% \changes{v0.1a}{2005/12/09}{ä½¿ç”¨~v0.7~ä»¥ä¸Šç‰ˆæœ¬çš„~ctex~å®åŒ…æä¾›çš„~fntef~é€‰é¡¹}
 %    \begin{macrocode}
 %<cls>\LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 %    \end{macrocode}
 %
 %
-% ×°Èë³£ÓÃµÄºê°ü
-% \changes{v0.1c}{2007/01/09}{Ê¹ÓÃ~ifpdf~ºê°üÀ´ÅĞ¶ÏÊÇ·ñÊ¹ÓÃ~pdfTeX~Ö±½ÓÉú³É~PDF~ÎÄ¼ş}
-% \changes{v0.1d}{2009/05/13}{Ê¹ÓÃ~pdfTeX~Ê±²»¼ÓÈë~psfrag~ºê°ü}
-% \changes{v0.1e}{2009/09/23}{¼ÓÈë~natbib~ºê°üÀ´Ñ¹ËõÅÅĞòÒıÓÃ}
+% è£…å…¥å¸¸ç”¨çš„å®åŒ…
+% \changes{v0.1c}{2007/01/09}{ä½¿ç”¨~ifpdf~å®åŒ…æ¥åˆ¤æ–­æ˜¯å¦ä½¿ç”¨~pdfTeX~ç›´æ¥ç”Ÿæˆ~PDF~æ–‡ä»¶}
+% \changes{v0.1d}{2009/05/13}{ä½¿ç”¨~pdfTeX~æ—¶ä¸åŠ å…¥~psfrag~å®åŒ…}
+% \changes{v0.1e}{2009/09/23}{åŠ å…¥~natbib~å®åŒ…æ¥å‹ç¼©æ’åºå¼•ç”¨}
+% \changes{v0.1f}{2022/04/20}{ä½¿ç”¨~ifxetex~å®åŒ…æ¥åˆ¤æ–­æ˜¯å¦ä½¿ç”¨~XeTeX~ç›´æ¥ç”Ÿæˆ~PDF~æ–‡ä»¶}
 %    \begin{macrocode}
 %<*cls>
 %% check pdfTeX mode
-\RequirePackage{ifpdf}
+\RequirePackage{ifpdf,ifxetex}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
@@ -231,24 +235,30 @@
 %% sort and compress citations
 \RequirePackage[sort&compress,numbers]{natbib}
 %% packages and settings depend on PDF mode
+\ifxetex
+  \RequirePackage[xetex]{hyperref}
+  \DeclareGraphicsExtensions{.pdf}
+\fi
 \ifpdf   % We're running pdfTeX in PDF mode
   \RequirePackage[pdftex]{hyperref}
   \DeclareGraphicsExtensions{.pdf}
-\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
-  \ifPDR@dvips
-    \RequirePackage[dvips]{hyperref}
-    \RequirePackage{psfrag}
-    \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
-  \else
-    \RequirePackage[dvipdfm]{hyperref}
-  \fi
+\fi
+% We're not running pdfTeX, or running pdfTeX in DVI mode
+\ifPDR@dvips
+  \RequirePackage[dvips]{hyperref}
+  \RequirePackage{psfrag}
+  \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
+  \DeclareGraphicsExtensions{.eps,.ps}
+\fi
+\ifPDR@dvipdfm
+  \RequirePackage[dvipdfm]{hyperref}
   \DeclareGraphicsExtensions{.eps,.ps}
 \fi
 %</cls>
 %    \end{macrocode}
 %
 %
-% ÉèÖÃ hyperref ºê°ü
+% è®¾ç½® hyperref å®åŒ…
 %    \begin{macrocode}
 %<*cls>
 \hypersetup{CJKbookmarks,%
@@ -271,10 +281,10 @@
 %
 %
 %
-% \subsection{È«¾ÖÉèÖÃ}
+% \subsection{å…¨å±€è®¾ç½®}
 %
 %
-% Ò³ÃæÉèÖÃ¡£
+% é¡µé¢è®¾ç½®ã€‚
 %    \begin{macrocode}
 %<*cls>
 \oddsidemargin 1.5 true cm
@@ -290,7 +300,7 @@
 %    \end{macrocode}
 %
 %
-% ¶ÎÂä¼ä¾à¡£
+% æ®µè½é—´è·ã€‚
 %    \begin{macrocode}
 %<*cls>
 \parskip 0.5ex plus 0.25ex minus 0.25ex
@@ -299,7 +309,7 @@
 %
 %
 % \begin{macro}{\cleardoublepage}
-% ÖØĞÂ¶¨Òå~\cs{cleardoublepage}~ÒÔÈ¡Ïû¿Õ°×Ò³µÄÒ³Ã¼¡£
+% é‡æ–°å®šä¹‰~\cs{cleardoublepage}~ä»¥å–æ¶ˆç©ºç™½é¡µçš„é¡µçœ‰ã€‚
 %    \begin{macrocode}
 %<*cls>
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
@@ -310,7 +320,7 @@
 % \end{macro}
 %
 %
-% ¸¡¶¯Í¼±í±ØĞëÕ¼Ò³ÃæµÄ~80\%~ÒÔÉÏ¡£
+% æµ®åŠ¨å›¾è¡¨å¿…é¡»å é¡µé¢çš„~80\%~ä»¥ä¸Šã€‚
 %    \begin{macrocode}
 %<*cls>
 \renewcommand{\floatpagefraction}{0.80}
@@ -318,7 +328,7 @@
 %    \end{macrocode}
 %
 %
-% Ê¹ÓÃ~\BibTeX{}~Ê±Ê¹ÓÃµÄ²Î¿¼ÎÄÏ×ÑùÊ½¡£
+% ä½¿ç”¨~\BibTeX{}~æ—¶ä½¿ç”¨çš„å‚è€ƒæ–‡çŒ®æ ·å¼ã€‚
 %    \begin{macrocode}
 %<*cls>
 \bibliographystyle{plain}
@@ -327,30 +337,31 @@
 %
 %
 % \begin{macro}{\PDRspace}
-% ÖĞÎÄ¿Õ¸ñ£¬ÓÃÓÚ±êÌâÖĞ¡£
+% ä¸­æ–‡ç©ºæ ¼ï¼Œç”¨äºæ ‡é¢˜ä¸­ã€‚
+% \changes{v0.1f}{2022/04/20}{æ–°çš„~ctex~å®åŒ…ä¸å†æ”¯æŒ~\cs{CTEX@spaceChar}}
 %    \begin{macrocode}
 %<*cls>
-\newcommand\PDRspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+\newcommand\PDRspace{\space\space}
 %</cls>
 %    \end{macrocode}
 % \end{macro}
 %
 %
-% ĞŞ¸Ä~\texttt{ctex}~ºê°üµÄÈ±Ê¡¶¨Òå¡£
+% ä¿®æ”¹~\texttt{ctex}~å®åŒ…çš„ç¼ºçœå®šä¹‰ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% the setup of ctex package
 %%
-\def\CTEX@contentsname{Ä¿\PDRspace Â¼}
-\def\CTEX@listfigurename{²å\PDRspace Í¼}
-\def\CTEX@listtablename{±í\PDRspace ¸ñ}
+\def\CTEX@contentsname{ç›®\PDRspace å½•}
+\def\CTEX@listfigurename{æ’\PDRspace å›¾}
+\def\CTEX@listtablename{è¡¨\PDRspace æ ¼}
 %</cfg>
 %    \end{macrocode}
 %
 %
 % \begin{macro}{\PDR@getfileinfo}
-% »ñµÃ°æ±¾ĞÅÏ¢¡£
+% è·å¾—ç‰ˆæœ¬ä¿¡æ¯ã€‚
 %    \begin{macrocode}
 %<*cls>
 \def\PDR@getfileinfo#1 #2 #3\relax#4\relax{%
@@ -370,50 +381,51 @@
 %
 %
 %
-% \subsection{·âÃæ}
+% \subsection{å°é¢}
 %
-% \subsubsection{ÖĞÎÄ·âÃæ}
+% \subsubsection{ä¸­æ–‡å°é¢}
 %
 %
 % \begin{macro}{\PDR@underline}
-% ¶¨Òå¿ÉÒÔÖ¸¶¨¿í¶ÈµÄÏÂ»®Ïß
-% \changes{v0.1a}{2005/12/09}{ÓÃ~\cs{CTEXunderline}~´úÌæ~\cs{underline}£¬ÔÊĞí»»ĞĞ}
+% å®šä¹‰å¯ä»¥æŒ‡å®šå®½åº¦çš„ä¸‹åˆ’çº¿
+% \changes{v0.1a}{2005/12/09}{ç”¨~\cs{CTEXunderline}~ä»£æ›¿~\cs{underline}ï¼Œå…è®¸æ¢è¡Œ}
+% \changes{v0.1f}{2022/04/20}{æ–°çš„~ctex~å®åŒ…ä¸å†æ”¯æŒ~\cs{CTEXunderline}}
 %    \begin{macrocode}
 %<*cls>
 \def\PDR@underline[#1]#2{%
-  \CTEXunderline{\hbox to #1{\hfill#2\hfill}}}
-\def\PDRunderline{\@ifnextchar[\PDR@underline\CTEXunderline}
+  \CJKunderline{\hbox to #1{\hfill#2\hfill}}}
+\def\PDRunderline{\@ifnextchar[\PDR@underline\CJKunderline}
 %</cls>
 %    \end{macrocode}
 % \end{macro}
 %
 %
-% ·âÃæÉÏµÄ±êÇ©ÄÚÈİ£¬ÓÉÓÚ°üº¬ÖĞÎÄ×Ö·û£¬ËùÒÔ±ØĞë·ÅÔÚ~\texttt{PostDocRep.cfg}~
-% ÎÄ¼şÖĞ¡£
+% å°é¢ä¸Šçš„æ ‡ç­¾å†…å®¹ï¼Œç”±äºåŒ…å«ä¸­æ–‡å­—ç¬¦ï¼Œæ‰€ä»¥å¿…é¡»æ”¾åœ¨~\texttt{PostDocRep.cfg}~
+% æ–‡ä»¶ä¸­ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% labels in the title page
 %%
-\def\PDR@label@classification{·ÖÀàºÅ}
-\def\PDR@label@confidential{ÃÜ¼¶}
+\def\PDR@label@classification{åˆ†ç±»å·}
+\def\PDR@label@confidential{å¯†çº§}
 \def\PDR@label@UDC{UDC}
-\def\PDR@label@serialnumber{±àºÅ}
-\def\PDR@label@report{²©Ê¿ºóÑĞ¾¿±¨¸æ}
-\def\PDR@label@workdate{¹¤×÷Íê³ÉÈÕÆÚ}
-\def\PDR@label@submitdate{±¨¸æÌá½»ÈÕÆÚ}
-\def\PDR@label@author{²©Ê¿ºóĞÕÃû}
-\def\PDR@label@advisor{ºÏ×÷µ¼Ê¦}
-\def\PDR@label@major{Á÷¶¯Õ¾£¨Ò»¼¶Ñ§¿Æ£©Ãû³Æ}
-\def\PDR@label@submajor{×¨¡¡Òµ£¨¶ş¼¶Ñ§¿Æ£©Ãû³Æ}
-\def\PDR@label@begindate{ÑĞ¾¿¹¤×÷ÆğÊ¼Ê±¼ä}
-\def\PDR@label@enddate{ÑĞ¾¿¹¤×÷ÆÚÂúÊ±¼ä}
-\def\PDR@label@institute{µ¥Î»Ãû³Æ}
+\def\PDR@label@serialnumber{ç¼–å·}
+\def\PDR@label@report{åšå£«åç ”ç©¶æŠ¥å‘Š}
+\def\PDR@label@workdate{å·¥ä½œå®Œæˆæ—¥æœŸ}
+\def\PDR@label@submitdate{æŠ¥å‘Šæäº¤æ—¥æœŸ}
+\def\PDR@label@author{åšå£«åå§“å}
+\def\PDR@label@advisor{åˆä½œå¯¼å¸ˆ}
+\def\PDR@label@major{æµåŠ¨ç«™ï¼ˆä¸€çº§å­¦ç§‘ï¼‰åç§°}
+\def\PDR@label@submajor{ä¸“ã€€ä¸šï¼ˆäºŒçº§å­¦ç§‘ï¼‰åç§°}
+\def\PDR@label@begindate{ç ”ç©¶å·¥ä½œèµ·å§‹æ—¶é—´}
+\def\PDR@label@enddate{ç ”ç©¶å·¥ä½œæœŸæ»¡æ—¶é—´}
+\def\PDR@label@institute{å•ä½åç§°}
 %</cfg>
 %    \end{macrocode}
 %
 %
-% ·âÃæµÄÌîĞ´ÄÚÈİ¡£
+% å°é¢çš„å¡«å†™å†…å®¹ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
@@ -423,24 +435,24 @@
 \def\PDR@value@confidential{}
 \def\PDR@value@UDC{}
 \def\PDR@value@serialnumber{}
-\def\PDR@value@school{ÖĞ¹ú¿ÆÑ§Ôº}
-\def\PDR@value@title{~~~~~£¨±¨~¸æ~Ìâ~Ä¿£©~~~~~}
+\def\PDR@value@school{ä¸­å›½ç§‘å­¦é™¢}
+\def\PDR@value@title{~~~~~ï¼ˆæŠ¥~å‘Š~é¢˜~ç›®ï¼‰~~~~~}
 \def\PDR@value@titlemark{\PDR@value@title}
-\def\PDR@value@author{£¨×÷~Õß~ĞÕ~Ãû£©}
+\def\PDR@value@author{ï¼ˆä½œ~è€…~å§“~åï¼‰}
 \def\PDR@value@advisor{}
 \def\PDR@value@begindate{}
 \def\PDR@value@enddate{}
 \def\PDR@value@submitdate{}
-\def\PDR@value@address{ÖĞ¹ú¿ÆÑ§Ôº£¨±±¾©£©}
+\def\PDR@value@address{ä¸­å›½ç§‘å­¦é™¢ï¼ˆåŒ—äº¬ï¼‰}
 \def\PDR@value@englishtitle{~~~~~(title)~~~~~}
 \def\PDR@value@major{}
 \def\PDR@value@submajor{}
-\def\PDR@value@institute{ÖĞ¹ú¿ÆÑ§ÔºÊıÑ§ÓëÏµÍ³¿ÆÑ§ÑĞ¾¿Ôº£¨±±¾©£©}
+\def\PDR@value@institute{ä¸­å›½ç§‘å­¦é™¢æ•°å­¦ä¸ç³»ç»Ÿç§‘å­¦ç ”ç©¶é™¢ï¼ˆåŒ—äº¬ï¼‰}
 %</cfg>
 %    \end{macrocode}
 %
 %
-% ¶¨ÒåÉèÖÃ·âÃæÄÚÈİµÄÃüÁî¡£
+% å®šä¹‰è®¾ç½®å°é¢å†…å®¹çš„å‘½ä»¤ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newcommand\classification[1]{\def\PDR@value@classification{#1}}
@@ -466,9 +478,9 @@
 %
 %
 % \begin{macro}{\maketitle}
-% Éú³É·âÃæ¡£
-% \changes{v0.1a}{2005/04/21}{ĞŞÕı~\cs{maketitle}~ÖĞ¶àÓà²ÎÊıµÄĞ¡´íÎó}
-% \changes{v0.1b}{2006/01/13}{Ôö¼Ó¿ÉÑ¡µÄºÏ×÷µ¼Ê¦À¸~\cs{advisor}}
+% ç”Ÿæˆå°é¢ã€‚
+% \changes{v0.1a}{2005/04/21}{ä¿®æ­£~\cs{maketitle}~ä¸­å¤šä½™å‚æ•°çš„å°é”™è¯¯}
+% \changes{v0.1b}{2006/01/13}{å¢åŠ å¯é€‰çš„åˆä½œå¯¼å¸ˆæ ~\cs{advisor}}
 %    \begin{macrocode}
 %<*cls>
 \renewcommand\maketitle{%
@@ -581,10 +593,10 @@
 % \end{macro}
 %
 %
-% \subsection{Ò³Ã¼}
+% \subsection{é¡µçœ‰}
 %
 %
-% ÕÂÊ×Ò³µÄÒ³Ã¼ÉèÖÃ¡£
+% ç« é¦–é¡µçš„é¡µçœ‰è®¾ç½®ã€‚
 %    \begin{macrocode}
 %<*cls>
 \fancypagestyle{plain}{%
@@ -596,7 +608,7 @@
 %    \end{macrocode}
 %
 %
-% ÆÕÍ¨Ò³ÃæµÄÒ³Ã¼ÉèÖÃ¡£
+% æ™®é€šé¡µé¢çš„é¡µçœ‰è®¾ç½®ã€‚
 %    \begin{macrocode}
 %<*cls>
 \pagestyle{fancy}
@@ -610,25 +622,25 @@
 %
 %
 %
-% \subsection{ÕªÒª}
+% \subsection{æ‘˜è¦}
 %
 %
-% ÕªÒªÖĞµÄ±êÇ©ÄÚÈİ¡£
+% æ‘˜è¦ä¸­çš„æ ‡ç­¾å†…å®¹ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% labels in the abstracts
 %%
-\def\PDR@label@abstract{Õª\PDRspace Òª}
+\def\PDR@label@abstract{æ‘˜\PDRspace è¦}
 \def\PDR@label@englishabstract{Abstract}
-\def\PDR@label@keywords{¹Ø¼ü´Ê£º}
+\def\PDR@label@keywords{å…³é”®è¯ï¼š}
 \def\PDR@label@englishkeywords{Keywords:~}
 %</cfg>
 %    \end{macrocode}
 %
 %
 % \begin{environment}{abstract}
-% ÖĞÎÄÕªÒª¡£
+% ä¸­æ–‡æ‘˜è¦ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newenvironment{abstract}
@@ -640,7 +652,7 @@
 %
 %
 % \begin{macro}{\keywords}
-% ÖĞÎÄ¹Ø¼ü´Ê¡£
+% ä¸­æ–‡å…³é”®è¯ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newcommand\keywords[1]{%
@@ -651,7 +663,7 @@
 %
 %
 % \begin{environment}{englishabstract}
-% Ó¢ÎÄÕªÒª¡£
+% è‹±æ–‡æ‘˜è¦ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newenvironment{englishabstract}
@@ -663,7 +675,7 @@
 %
 %
 % \begin{macro}{\englishkeywords}
-% Ó¢ÎÄ¹Ø¼ü´Ê¡£
+% è‹±æ–‡å…³é”®è¯ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newcommand\englishkeywords[1]{%
@@ -675,11 +687,11 @@
 %
 %
 %
-% \subsection{Ä¿Â¼}
+% \subsection{ç›®å½•}
 %
 %
 % \begin{macro}{\tableofcontents}
-% ÉèÖÃÄ¿Â¼¸ñÊ½¡£
+% è®¾ç½®ç›®å½•æ ¼å¼ã€‚
 %    \begin{macrocode}
 %<*cls>
 \renewcommand\tableofcontents{%
@@ -698,7 +710,7 @@
 % \end{macro}
 %
 %
-% È¥µôÄ¿Â¼ÖĞµÄÖĞÎÄ¿Õ¸ñ¡£
+% å»æ‰ç›®å½•ä¸­çš„ä¸­æ–‡ç©ºæ ¼ã€‚
 %    \begin{macrocode}
 %<*cls>
 \addtocontents{toc}{\let\string\CTEX@spaceChar\relax}
@@ -707,7 +719,7 @@
 %
 %
 % \begin{macro}{\Nchapter}
-% ÓÃÓÚ²úÉúÃ»ÓĞ±àºÅµ«ÔÚÄ¿Â¼ÖĞÁĞ³öµÄÕÂ¡£
+% ç”¨äºäº§ç”Ÿæ²¡æœ‰ç¼–å·ä½†åœ¨ç›®å½•ä¸­åˆ—å‡ºçš„ç« ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newcommand*\Nchapter[1]{%
@@ -723,9 +735,9 @@
 % \end{macro}
 %
 %
-% \changes{v0.1d}{2009/05/13}{¸Ä±äÈ±Ê¡µÄÄ¿Â¼ÖĞµÄµãÏßÎªÖĞÎÄÏ°¹ß}
+% \changes{v0.1d}{2009/05/13}{æ”¹å˜ç¼ºçœçš„ç›®å½•ä¸­çš„ç‚¹çº¿ä¸ºä¸­æ–‡ä¹ æƒ¯}
 % \begin{macro}{\@dottedtocline}
-% ¸Ä±äÈ±Ê¡µÄÄ¿Â¼ÖĞµÄµãÏßÎªÖĞÎÄÏ°¹ß
+% æ”¹å˜ç¼ºçœçš„ç›®å½•ä¸­çš„ç‚¹çº¿ä¸ºä¸­æ–‡ä¹ æƒ¯
 %    \begin{macrocode}
 %<*cls>
 \def\@dottedtocline#1#2#3#4#5{%
@@ -749,7 +761,7 @@
 %
 %
 % \begin{macro}{\l@part}
-% ¸Ä±äÈ±Ê¡µÄÄ¿Â¼ÖĞµÄµãÏßÎªÖĞÎÄÏ°¹ß
+% æ”¹å˜ç¼ºçœçš„ç›®å½•ä¸­çš„ç‚¹çº¿ä¸ºä¸­æ–‡ä¹ æƒ¯
 %    \begin{macrocode}
 %<*cls>
 \renewcommand*\l@part[2]{%
@@ -775,7 +787,7 @@
 %
 %
 % \begin{macro}{\l@chapter}
-% ¸Ä±äÈ±Ê¡µÄÄ¿Â¼ÖĞµÄµãÏßÎªÖĞÎÄÏ°¹ß
+% æ”¹å˜ç¼ºçœçš„ç›®å½•ä¸­çš„ç‚¹çº¿ä¸ºä¸­æ–‡ä¹ æƒ¯
 %    \begin{macrocode}
 %<*cls>
 \renewcommand*\l@chapter[2]{%
@@ -802,11 +814,11 @@
 %
 %
 %
-% \subsection{²Î¿¼ÎÄÏ×}
+% \subsection{å‚è€ƒæ–‡çŒ®}
 %
 %
 % \begin{environment}{thebibliography}
-% ĞŞ¸Ä~thebibliography~µÄ¶¨ÒåÒÔÔÚÄ¿Â¼ÖĞ¼ÓÈëÏàÓ¦ÌõÄ¿¡£
+% ä¿®æ”¹~thebibliography~çš„å®šä¹‰ä»¥åœ¨ç›®å½•ä¸­åŠ å…¥ç›¸åº”æ¡ç›®ã€‚
 %    \begin{macrocode}
 %<*cls>
 \renewenvironment{thebibliography}[1]
@@ -835,22 +847,22 @@
 %
 %
 %
-% \subsection{·¢±íÎÄÕÂÄ¿Â¼}
+% \subsection{å‘è¡¨æ–‡ç« ç›®å½•}
 %
 %
-% ·¢±íÎÄÕÂÄ¿Â¼ÖĞµÄ±êÇ©ÄÚÈİ¡£
+% å‘è¡¨æ–‡ç« ç›®å½•ä¸­çš„æ ‡ç­¾å†…å®¹ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% labels in the publications
 %%
-\def\PDR@label@publications{·¢±íÎÄÕÂÄ¿Â¼}
+\def\PDR@label@publications{å‘è¡¨æ–‡ç« ç›®å½•}
 %</cfg>
 %    \end{macrocode}
 %
 %
 % \begin{environment}{publications}
-% ·¢±íÎÄÕÂÄ¿Â¼¡£
+% å‘è¡¨æ–‡ç« ç›®å½•ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newenvironment{publications}[1]
@@ -880,22 +892,22 @@
 %
 %
 %
-% \subsection{¼òÀú}
+% \subsection{ç®€å†}
 %
 %
-% ¼òÀúÖĞµÄ±êÇ©ÄÚÈİ¡£
+% ç®€å†ä¸­çš„æ ‡ç­¾å†…å®¹ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% labels in the resume
 %%
-\def\PDR@label@resume{¼ò\PDRspace Àú}
+\def\PDR@label@resume{ç®€\PDRspace å†}
 %</cfg>
 %    \end{macrocode}
 %
 %
 % \begin{environment}{resume}
-% ¸öÈË¼òÀú¡£
+% ä¸ªäººç®€å†ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newenvironment{resume}
@@ -907,7 +919,7 @@
 %
 %
 % \begin{environment}{resumesection}
-% ¼òÀúÖĞµÄÃèÊöÏîÄ¿¡£
+% ç®€å†ä¸­çš„æè¿°é¡¹ç›®ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newenvironment{resumesection}[1]
@@ -922,7 +934,7 @@
 %
 %
 % \begin{environment}{resumelist}
-% ¼òÀúÖĞµÄÁĞ±íÏîÄ¿¡£
+% ç®€å†ä¸­çš„åˆ—è¡¨é¡¹ç›®ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newenvironment{resumelist}[1]
@@ -940,22 +952,22 @@
 %
 %
 %
-% \subsection{ÖÂĞ»}
+% \subsection{è‡´è°¢}
 %
 %
-% ÖÂĞ»ÖĞµÄ±êÇ©ÄÚÈİ¡£
+% è‡´è°¢ä¸­çš„æ ‡ç­¾å†…å®¹ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% labels in the thanks
 %%
-\def\PDR@label@thanks{ÖÂ\PDRspace Ğ»}
+\def\PDR@label@thanks{è‡´\PDRspace è°¢}
 %</cfg>
 %    \end{macrocode}
 %
 %
 % \begin{environment}{thanks}
-% ÖÂĞ»¡£
+% è‡´è°¢ã€‚
 %    \begin{macrocode}
 %<*cls>
 \renewenvironment{thanks}
@@ -968,7 +980,7 @@
 %
 %
 %
-% \subsection{ÕÂ½Ú±êÌâ}
+% \subsection{ç« èŠ‚æ ‡é¢˜}
 %
 %
 %    \begin{macrocode}
@@ -978,7 +990,7 @@
 %    \end{macrocode}
 %
 %
-% chapter~µÄÈ±Ê¡¸ñÊ½
+% chapter~çš„ç¼ºçœæ ¼å¼
 %    \begin{macrocode}
 %<*cfg>
 %%
@@ -992,7 +1004,7 @@
 %    \end{macrocode}
 %
 %
-% section~µÄÈ±Ê¡¸ñÊ½
+% section~çš„ç¼ºçœæ ¼å¼
 %    \begin{macrocode}
 %<*cfg>
 %%
@@ -1005,7 +1017,7 @@
 %    \end{macrocode}
 %
 %
-% subsection~µÄÈ±Ê¡¸ñÊ½
+% subsection~çš„ç¼ºçœæ ¼å¼
 %    \begin{macrocode}
 %<*cfg>
 %%
@@ -1019,7 +1031,7 @@
 %    \end{macrocode}
 %
 %
-% subsubsection~µÄÈ±Ê¡¸ñÊ½
+% subsubsection~çš„ç¼ºçœæ ¼å¼
 %    \begin{macrocode}
 %<*cfg>
 %%
@@ -1035,9 +1047,9 @@
 %
 %
 %
-% \subsection{¶¨Àí±êÌâ}
+% \subsection{å®šç†æ ‡é¢˜}
 %
-% ¶ÀÁ¢¶¨Àí±êÌâÑùÊ½£¨±êÌâºó»»ĞĞ£©¡£
+% ç‹¬ç«‹å®šç†æ ‡é¢˜æ ·å¼ï¼ˆæ ‡é¢˜åæ¢è¡Œï¼‰ã€‚
 %    \begin{macrocode}
 %<*cls>
 \newtheoremstyle{break}% name
@@ -1053,30 +1065,30 @@
 %    \end{macrocode}
 %
 %
-% ¸÷ÖÖ¶¨ÀíÀàĞÍ±êÌâ¡£
+% å„ç§å®šç†ç±»å‹æ ‡é¢˜ã€‚
 %    \begin{macrocode}
 %<*cfg>
 %%
 %% the theorems definitions
 %%
 \theoremstyle{plain}
-  \newtheorem{algo}{Ëã·¨~}[chapter]
-  \newtheorem{thm}{¶¨Àí~}[chapter]
-  \newtheorem{lem}[thm]{ÒıÀí~}
-  \newtheorem{prop}[thm]{ÃüÌâ~}
-  \newtheorem{cor}[thm]{ÍÆÂÛ~}
+  \newtheorem{algo}{ç®—æ³•~}[chapter]
+  \newtheorem{thm}{å®šç†~}[chapter]
+  \newtheorem{lem}[thm]{å¼•ç†~}
+  \newtheorem{prop}[thm]{å‘½é¢˜~}
+  \newtheorem{cor}[thm]{æ¨è®º~}
 \theoremstyle{definition}
-  \newtheorem{defn}{¶¨Òå~}[chapter]
-  \newtheorem{conj}{²ÂÏë~}[chapter]
-  \newtheorem{exmp}{Àı~}[chapter]
-  \newtheorem{rem}{×¢~}
-  \newtheorem{case}{ÇéĞÎ~}
+  \newtheorem{defn}{å®šä¹‰~}[chapter]
+  \newtheorem{conj}{çŒœæƒ³~}[chapter]
+  \newtheorem{exmp}{ä¾‹~}[chapter]
+  \newtheorem{rem}{æ³¨~}
+  \newtheorem{case}{æƒ…å½¢~}
 \theoremstyle{break}
-  \newtheorem{bthm}[thm]{¶¨Àí~}
-  \newtheorem{blem}[thm]{ÒıÀí~}
-  \newtheorem{bprop}[thm]{ÃüÌâ~}
-  \newtheorem{bcor}[thm]{ÍÆÂÛ~}
-\renewcommand{\proofname}{\bf Ö¤Ã÷}
+  \newtheorem{bthm}[thm]{å®šç†~}
+  \newtheorem{blem}[thm]{å¼•ç†~}
+  \newtheorem{bprop}[thm]{å‘½é¢˜~}
+  \newtheorem{bcor}[thm]{æ¨è®º~}
+\renewcommand{\proofname}{\bf è¯æ˜}
 %</cfg>
 %    \end{macrocode}
 %
@@ -1086,11 +1098,11 @@
 % \Finale
 %
 % \setcounter{IndexColumns}{2}
-% \IndexPrologue{\section*{Ë÷Òı} {\it Òâ´óÀûÌåµÄÊı×Ö±íÊ¾ÃèÊö¶ÔÓ¦Ë÷ÒıÏîµÄÒ³Âë£»
-%                ´øÏÂ»®ÏßµÄÊı×Ö±íÊ¾¶¨Òå¶ÔÓ¦Ë÷ÒıÏîµÄ´úÂëĞĞºÅ£»
-%                ÂŞÂí×ÖÌåµÄÊı×Ö±íÊ¾Ê¹ÓÃ¶ÔÓ¦Ë÷ÒıÏîµÄ´úÂëĞĞºÅ¡£}}
+% \IndexPrologue{\section*{ç´¢å¼•} {\it æ„å¤§åˆ©ä½“çš„æ•°å­—è¡¨ç¤ºæè¿°å¯¹åº”ç´¢å¼•é¡¹çš„é¡µç ï¼›
+%                å¸¦ä¸‹åˆ’çº¿çš„æ•°å­—è¡¨ç¤ºå®šä¹‰å¯¹åº”ç´¢å¼•é¡¹çš„ä»£ç è¡Œå·ï¼›
+%                ç½—é©¬å­—ä½“çš„æ•°å­—è¡¨ç¤ºä½¿ç”¨å¯¹åº”ç´¢å¼•é¡¹çš„ä»£ç è¡Œå·ã€‚}}
 %
-% \GlossaryPrologue{\section*{°æ±¾¸üĞÂ}}
+% \GlossaryPrologue{\section*{ç‰ˆæœ¬æ›´æ–°}}
 %
 % \PrintIndex \PrintChanges
 \endinput

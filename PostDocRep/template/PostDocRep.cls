@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright 2005-2006
+%% Copyright 2005-2022
 %% CTEX.ORG and any individual authors listed elsewhere in this file.
 %% 
 %% This file was generated from file(s) of the PostDocRep package project.
@@ -50,19 +50,21 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{PostDocRep}
-  [2009/09/23 v0.1e PostDocRep
+  [2022/04/20 v0.1f PostDocRep
    document class]
 \newif\ifPDR@typeinfo \PDR@typeinfotrue
 \DeclareOption{notypeinfo}{\PDR@typeinfofalse}
 \newif\ifPDR@dvips \PDR@dvipsfalse
-\DeclareOption{dvips}{\PDR@dvipstrue}
-\DeclareOption{dvipdfm}{\PDR@dvipsfalse}
-\DeclareOption{pdftex}{\PDR@dvipsfalse}
+\newif\ifPDR@dvipdfm \PDR@dvipdfmfalse
+\DeclareOption{dvips}{\PDR@dvipstrue\PDR@dvipdfmfalse}
+\DeclareOption{dvipdfm}{\PDR@dvipsfalse\PDR@dvipdfmtrue}
+\DeclareOption{pdftex}{\PDR@dvipsfalse\PDR@dvipdfmfalse}
+\DeclareOption{xetex}{\PDR@dvipsfalse\PDR@dvipdfmfalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
 \LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 %% check pdfTeX mode
-\RequirePackage{ifpdf}
+\RequirePackage{ifpdf,ifxetex}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
@@ -70,17 +72,22 @@
 %% sort and compress citations
 \RequirePackage[sort&compress,numbers]{natbib}
 %% packages and settings depend on PDF mode
+\ifxetex
+  \RequirePackage[xetex]{hyperref}
+  \DeclareGraphicsExtensions{.pdf}
+\fi
 \ifpdf   % We're running pdfTeX in PDF mode
   \RequirePackage[pdftex]{hyperref}
   \DeclareGraphicsExtensions{.pdf}
-\else    % We're not running pdfTeX, or running pdfTeX in DVI mode
-  \ifPDR@dvips
-    \RequirePackage[dvips]{hyperref}
-    \RequirePackage{psfrag}
-    \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
-  \else
-    \RequirePackage{hyperref}
-  \fi
+\fi
+\ifPDR@dvips
+  \RequirePackage[dvips]{hyperref}
+  \RequirePackage{psfrag}
+  \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
+  \DeclareGraphicsExtensions{.eps,.ps}
+\fi
+\ifPDR@dvipdfm
+  \RequirePackage[dvipdfm]{hyperref}
   \DeclareGraphicsExtensions{.eps,.ps}
 \fi
 \hypersetup{CJKbookmarks,%
@@ -106,7 +113,7 @@
   \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 \renewcommand{\floatpagefraction}{0.80}
 \bibliographystyle{plain}
-\newcommand\PDRspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+\newcommand\PDRspace{\space\space}
 \def\PDR@getfileinfo#1 #2 #3\relax#4\relax{%
   \def\PDRfiledate{#1}%
   \def\PDRfileversion{#2}%
@@ -118,8 +125,8 @@
 \fi
 \expandafter\PDR@getfileinfo\reserved@a\relax? ? \relax\relax
 \def\PDR@underline[#1]#2{%
-  \CTEXunderline{\hbox to #1{\hfill#2\hfill}}}
-\def\PDRunderline{\@ifnextchar[\PDR@underline\CTEXunderline}
+  \CJKunderline{\hbox to #1{\hfill#2\hfill}}}
+\def\PDRunderline{\@ifnextchar[\PDR@underline\CJKunderline}
 \newcommand\classification[1]{\def\PDR@value@classification{#1}}
 \newcommand\confidential[1]{\def\PDR@value@confidential{#1}}
 \newcommand\UDC[1]{\def\PDR@value@UDC{#1}}
