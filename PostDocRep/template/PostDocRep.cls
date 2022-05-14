@@ -50,7 +50,7 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{PostDocRep}
-  [2022/04/20 v0.1f PostDocRep
+  [2022/05/14 v0.1g PostDocRep
    document class]
 \newif\ifPDR@typeinfo \PDR@typeinfotrue
 \DeclareOption{notypeinfo}{\PDR@typeinfofalse}

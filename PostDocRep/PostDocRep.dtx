@@ -33,7 +33,7 @@
 %%   Right brace   \}     Tilde         \~}
 %%
 %
-% \CheckSum{859}
+% \CheckSum{871}
 %
 % \iffalse meta-comment
 %</!(cfg|fd)>
@@ -45,7 +45,7 @@
 %<cls>\NeedsTeXFormat{LaTeX2e}[1995/12/01]
 %<cls>\ProvidesClass{PostDocRep}
 %<cfg>\ProvidesFile{PostDocRep.cfg}
-  [2022/04/20 v0.1f PostDocRep
+  [2022/05/14 v0.1g PostDocRep
 %<cls>   document class]
 %<cfg>   configuration file]
 %
@@ -1004,6 +1004,7 @@
 %    \end{macrocode}
 %
 %
+% \changes{v0.1g}{2022/05/14}{修正标题前间隔为负的错误}
 % section~的缺省格式
 %    \begin{macrocode}
 %<*cfg>
@@ -1011,12 +1012,13 @@
 %% the section title format
 %%
 \def\CTEX@section@format{\bfseries\heiti\zihao{4}\centering}
-\def\CTEX@section@beforeskip{-3ex \@plus -1ex \@minus -.2ex}
+\def\CTEX@section@beforeskip{3ex \@plus 1ex \@minus .2ex}
 \def\CTEX@section@afterskip{1.0ex \@plus .2ex}
 %</cfg>
 %    \end{macrocode}
 %
 %
+% \changes{v0.1g}{2022/05/14}{修正标题前间隔为负的错误}
 % subsection~的缺省格式
 %    \begin{macrocode}
 %<*cfg>
@@ -1025,12 +1027,13 @@
 %%
 \def\CTEX@subsection@format{\bfseries\heiti\zihao{-4}}
 \def\CTEX@subsection@indent{2\ccwd}
-\def\CTEX@subsection@beforeskip{-2.5ex \@plus -1ex \@minus -.2ex}
+\def\CTEX@subsection@beforeskip{2.5ex \@plus 1ex \@minus .2ex}
 \def\CTEX@subsection@afterskip{1.0ex \@plus .2ex}
 %</cfg>
 %    \end{macrocode}
 %
 %
+% \changes{v0.1g}{2022/05/14}{修正标题前间隔为负的错误}
 % subsubsection~的缺省格式
 %    \begin{macrocode}
 %<*cfg>
@@ -1039,7 +1042,7 @@
 %%
 \def\CTEX@subsubsection@format{\bfseries\heiti\zihao{-4}}
 \def\CTEX@subsubsection@indent{2\ccwd}
-\def\CTEX@subsubsection@beforeskip{-2ex \@plus -1ex \@minus -.2ex}
+\def\CTEX@subsubsection@beforeskip{2ex \@plus 1ex \@minus .2ex}
 \def\CTEX@subsubsection@afterskip{1.0ex \@plus .2ex}
 %</cfg>
 %    \end{macrocode}
